@@ -1,21 +1,70 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import Home from './src/Components/Home'
+import Collections from './src/Components/Collections';
+import ViewCollection from './src//Components/ViewCollection';
+import Profile from './src/Components/Profile'
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createStackNavigator();
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
+  render(){
+    const user = this.props.user.id
+    return (
+      <NavigationContainer>
+        <Stack.Navigator
+        screenOptions={{
+        headerShown: false
+        }}>
+          
+          {
+            
+          user 
+            
+          ? 
+            
+          <Stack.Screen
+          name="Collections"
+          component={Collections}
+          /> 
+          
+          : 
+          
+          <Stack.Screen
+          name="Home"
+          component={Home}
+          />
+          
+          }
+
+          <Stack.Screen
+          name='View Collection'
+          component={ViewCollection}
+          />
+
+          <Stack.Screen
+          name='Profile'
+          component={Profile}
+          />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const mapStateToProps = (state) => {
+  return {
+      user: state.user
+  }
+}
+
+export default connect(mapStateToProps, null) (App);
+
