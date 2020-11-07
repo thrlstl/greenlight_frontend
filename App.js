@@ -7,12 +7,27 @@ import Collections from './src/Components/Collections';
 import ViewCollection from './src//Components/ViewCollection';
 import Profile from './src/Components/Profile'
 import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from './src/Components/SplashScreen';
+
 
 const Stack = createStackNavigator();
 
 class App extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      isLoading: true
+    }
+  }
+
+  changeLoading = () => {
+    this.setState({
+      isLoading: false
+    })
+  }
+
+  componentDidMount() {
+    setTimeout(this.changeLoading, 400)
   }
 
   render(){

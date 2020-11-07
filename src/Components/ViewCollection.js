@@ -7,9 +7,11 @@ import {
   Text,
   Button,
   SafeAreaView,
-  Image
+  Image,
+  TouchableHighlight
 } from "react-native";
 
+import Swipeable from 'react-native-swipeable';
 import GridList from 'react-native-grid-list';
 import DoubleClick from 'react-native-double-click';
 import Svg, { Ellipse } from "react-native-svg";
@@ -22,25 +24,102 @@ import { loginSuccess } from '../Actions/auth.js';
 import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
 
 
+// const leftContent = <View style={{backgroundColor: 'green'}}><Text>Approved</Text></View>;
+const rightContent = <View 
+style={{backgroundColor: '#ff7c7c', width: '100%', height: '100%'}}></View>;
+
 class ViewCollection extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
     }
 
-    // handleClick() {
-    //     console.log('')
-    //   }
+    handleApprove = () => {
+      console.log('approved')
+    }
+
+    handleDisapprove = () => {
+      console.log('disapproved')
+    }
+
+    renderUserApprovals = (item) => {
+      const loggedInUserId = this.props.user.id
+      return item.approvals.map(approvalItem => {
+          if (approvalItem.user_id === loggedInUserId && approvalItem.approval) {
+            return <Text>Approved by Logged In User</Text>
+          }
+          else if (approvalItem.user_id === loggedInUserId && !approvalItem.approval) {
+            return <Text>Not Approved by Logged In User</Text>
+          }
+        })
+    }
+    
+    renderUserDisapprovals = (item) => {
+      console.log('disapprovals')
+    }
+
+    // REFACTORING IN PROGRESS
+    // renderApproveOrDisapprove = (item) => {
+    //   const approvals = []
+    //   const disapprovals = []
+    //   item.approvals.map(approvalItem => {
+    //     approvalItem.approval ? 
+    //     approvals.push(approvalItem) :
+    //     disapprovals.push(approvalItem)
+    //   })
+    //   approvals.length ? <Text>{approvals.length} Approve</Text> : null
+    //   disapprovals.length ? <Text>{disapprovals.length} Disapprove</Text> : null
+    // }
+
+    renderApprovals = (item) => {
+      const approvals = []
+      item.approvals.map(approvalItem => {
+        if (approvalItem.approval === true) {
+          approvals.push(approvalItem)
+        }
+      })
+        if (approvals.length) {
+          return <Text>{approvals.length} Approve</Text>
+        }
+    }
+
+    renderDisapprovals = (item) => {
+      const disapprovals = []
+      item.approvals.map(approvalItem => {
+        if (approvalItem.approval === false) {
+          disapprovals.push(approvalItem)
+        }
+      })
+      if (disapprovals.length) {
+        return <Text>{disapprovals.length} Disapprove</Text>
+      }
+    }
+
+    renderResponses = (item) => {
+      if (item.approvals.length) {
+        return <View>
+              {this.renderApprovals(item)}
+              {this.renderDisapprovals(item)}
+              {this.renderUserApprovals(item)}
+              {/* {this.renderApproveOrDisapprove(item) */}
+              </View>
+      }
+    }
 
     renderItem = ({ item, index }) => (
-            <TouchableOpacity key={index}>
-                <Image key={item.id} style={styles.image} source={{uri: `http://localhost:3001${item.photo}`}} />
+      <Swipeable 
+      // leftContent={leftContent}
+      // onLeftActionRelease={this.handleApprove}
+      rightContent={rightContent}
+      onRightActionComplete={this.handleDisapprove}
+      >
+            <DoubleClick  key={index}>
+              <Image key={item.id} style={styles.image} source={{uri: `http://localhost:3001${item.photo}`}} />
                 <View style={styles.rect}>
-                    <View style={styles.buttonRow}>
-                    <TouchableOpacity style={styles.button}></TouchableOpacity>
-                    <TouchableOpacity style={styles.button1}></TouchableOpacity>
-                    </View>
+                  <Text>{item.caption}</Text>
+                  <View>{this.renderResponses(item)}</View>
                 </View>
-            </TouchableOpacity>
+            </DoubleClick>
+      </Swipeable>
       );
 
   render(){
@@ -50,7 +129,7 @@ class ViewCollection extends React.Component {
                     <GridList
                     showSeparator
                     data={this.props.collection.photos}
-                    numColumns={2}
+                    numColumns={1}
                     renderItem={this.renderItem}
                     itemStyle={styles.photoContainer}
                     />
@@ -62,6 +141,7 @@ class ViewCollection extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        user: state.user,
         collection: state.collection
     }
 }
@@ -81,21 +161,21 @@ const styles = StyleSheet.create({
       backgroundColor: 'black'
     },
     photoContainer: {
-      marginRight: 2,
+      marginRight: 0,
       marginLeft: 0,
       marginBottom: 55,
       marginTop: 0
     },
     image: {
-      width: '100%',
-      height: 200,
+      borderRightWidth: 2,
+      height: 350,
       borderRadius: 0,
 
     },
     rect: {
         backgroundColor: 'white',
         width: '100%',
-        height: 40,
+        height: 77,
         // flexDirection: "row"
       },
       button: {
@@ -109,10 +189,17 @@ const styles = StyleSheet.create({
         height: '100%',
         backgroundColor: "rgba(225,255,230,1)"
       },
+      caption: {
+        justifyContent: 'center',
+        width: '100%'
+      },
       buttonRow: {
         height: 62,
         width: '100%',
         flexDirection: "row",
         flex: 1
+      },
+      approval: {
+        backgroundColor: 'white'
       }
   });
