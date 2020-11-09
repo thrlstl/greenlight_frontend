@@ -1,5 +1,4 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import Home from './src/Components/Home'
@@ -8,6 +7,8 @@ import ViewCollection from './src//Components/ViewCollection';
 import Profile from './src/Components/Profile'
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './src/Components/SplashScreen';
+import PhotoUpload from './src/Components/PhotoUpload';
+// import SplashScreen from './src/Components/SplashScreen';
 
 
 const Stack = createStackNavigator();
@@ -16,24 +17,24 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      isLoading: true
+      splashScreen: true
     }
   }
 
-  changeLoading = () => {
+  componentDidMount() {
+    setTimeout(this.completeSplashScreen, 2400)
+  }
+
+  completeSplashScreen = () => {
     this.setState({
-      isLoading: false
+      splashScreen: false
     })
   }
 
-  componentDidMount() {
-    setTimeout(this.changeLoading, 400)
-  }
-
-  render(){
+  renderStack = () => {
     const user = this.props.user.id
     return (
-      <NavigationContainer>
+    <NavigationContainer>
         <Stack.Navigator
         screenOptions={{
         headerShown: false
@@ -69,8 +70,19 @@ class App extends React.Component {
           component={Profile}
           />
 
+          <Stack.Screen
+          name='Photo Upload'
+          component={PhotoUpload}
+          />
+
         </Stack.Navigator>
       </NavigationContainer>
+    )
+  }
+
+  render(){
+    return (
+    this.state.splashScreen ? <SplashScreen /> : this.renderStack()
     );
   }
 }

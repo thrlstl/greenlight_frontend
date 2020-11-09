@@ -14,17 +14,11 @@ import {
 import Swipeable from 'react-native-swipeable';
 import GridList from 'react-native-grid-list';
 import DoubleClick from 'react-native-double-click';
-import Svg, { Ellipse } from "react-native-svg";
-
 
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './Navigation';
 import { connect } from 'react-redux';
-import { loginSuccess } from '../Actions/auth.js';
-import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
 
-
-// const leftContent = <View style={{backgroundColor: 'green'}}><Text>Approved</Text></View>;
 const rightContent = <View 
 style={{backgroundColor: '#ff7c7c', width: '100%', height: '100%'}}></View>;
 

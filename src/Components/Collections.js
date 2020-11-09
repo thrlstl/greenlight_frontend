@@ -9,9 +9,6 @@ import { selectCollection } from '../Actions/collections';
 class Collections extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            collections: [1, 2, 3, 4, 5]
-        }
     }
 
     selectCollection = (id) => {

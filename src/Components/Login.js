@@ -41,7 +41,6 @@ handleSubmit = () => {
     fetch('http://localhost:3001/auth', reqObj)
     .then(resp => resp.json())
     .then(data => {
-        console.log(data)
       if (data.error) {
         this.setState({
           error: data.error

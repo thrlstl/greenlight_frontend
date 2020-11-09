@@ -1,11 +1,34 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ScrollView, Image, SafeAreaView } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity, StyleSheet, View, ScrollView, Image, SafeAreaView } from "react-native";
 import Navigation from './Navigation';
+import { connect } from 'react-redux';
+import { selectCollection } from '../Actions/collections';
 
 class BottomNavigation extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+          name: '',
+          location: '',
+          user_id: this.props.user.id
+        }
+    }
+
+    createCollection = () => {
+      const reqObj = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:  JSON.stringify(this.state)
+      }
+  
+      fetch('http://localhost:3001/collections', reqObj)
+      .then(resp => resp.json())
+      .then(data => {
+        this.props.selectCollection(data)
+          // this.props.signupSuccess(data)
+      })
     }
 
     handlePress = (name) => {
@@ -14,7 +37,8 @@ class BottomNavigation extends React.Component {
                 this.props.navigation.navigate('Collections')
                 break
             case 'ADD':
-                console.log(name)
+                this.createCollection()
+                this.props.navigation.navigate('Photo Upload')
                 break
             case 'PROFILE':
                 this.props.navigation.navigate('Profile')
@@ -41,7 +65,7 @@ class BottomNavigation extends React.Component {
                     <TouchableOpacity
                       onPress={() => this.handlePress('ADD')}>
                     <Image
-                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/add-button.png')}
+                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/add-button-2.png')}
                       resizeMode="contain"
                       style={styles.addButton}
                     ></Image>
@@ -51,7 +75,7 @@ class BottomNavigation extends React.Component {
                     <TouchableOpacity
                      onPress={() => this.handlePress('PROFILE')}>
                     <Image
-                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/profile-button.png')}
+                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/profile-button-2.png')}
                       resizeMode="contain"
                       style={styles.profileButton}
                     ></Image>
@@ -62,6 +86,12 @@ class BottomNavigation extends React.Component {
           );
     }
 }
+
+const mapDispatchToProps = {
+  selectCollection
+}
+
+export default connect(null, mapDispatchToProps) (BottomNavigation)
 
 const styles = StyleSheet.create({
   container: {
@@ -104,6 +134,3 @@ const styles = StyleSheet.create({
     marginTop: 15
   }
 });
-
-
-export default BottomNavigation;

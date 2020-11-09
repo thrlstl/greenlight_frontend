@@ -13,9 +13,17 @@ import { connect } from 'react-redux';
 function Collection(props) {
     const collectionName = props.name 
     const collectionLocation = props.location 
-    const storageURL = props.photos[0].photo
-    const URL = `http://localhost:3001${storageURL}`
+    // const URL = `http://localhost:3001${storageURL}`
     const date = moment(props.created_at).startOf('hour').fromNow();
+
+    const URL = () => {
+      if (props.photos.length) {
+        return `http://localhost:3001${props.photos[0].photo}` 
+      }
+      else {
+        return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/portrait-image.png'
+      }
+    }
 
   return (
     <View style={styles.container}>
@@ -25,7 +33,7 @@ function Collection(props) {
             <Text style={styles.collectionName2}>{collectionName}</Text>
           </TouchableOpacity>
           <ImageBackground
-            source={{uri: URL}}
+            source={{uri: URL()}}
             resizeMode="cover"
             style={styles.image18}
             imageStyle={styles.image18_imageStyle}

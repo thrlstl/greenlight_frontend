@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { createStore } from 'redux';
 import allReducers from './src/Reducers';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import App from './App'
 
 const store = createStore(
@@ -18,7 +18,7 @@ class Index extends React.Component {
     return (
           <Provider store={store}>
                 <App />
-            </Provider>
+          </Provider>
     );
   }
 }
