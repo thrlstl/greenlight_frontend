@@ -18,19 +18,59 @@ import {
 // import TopNavigation from './TopNavigation'
 // import BottomNavigation from './Navigation';
 
-// var RNFetchBlob = require('react-native-fetch-blob')
 // import { directUpload } from 'react-native-activestorage';
+
+import axios from 'axios';
 import { AssetsSelector } from 'expo-images-picker';
 import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
+
+const directUploadsUrl = 'https://localhost:3001/rails/active_storage/direct_uploads';
+
 
 class PhotoUpload extends React.Component {
     constructor(props){
         super(props)
     }
 
-    createPhoto = (photo) => {
-        console.log(photo)
+    createPhoto = (photoData) => {
+        // const formData = new FormData()
+        // const photo = photoData
+        // const collection_id = this.props.collection.id
+        // console.log(photoData)
+
+        // console.log(photo)
+        // formData.append('photo', photo)
+        // formData.append({
+        //     'photo': photo,
+        //     // 'collection_id': collection_id
+        // })
+        // console.log(formData)
+        
+        // axios.post(`http://localhost:3001/photos`, formData)
+
+        const URI = photoData.uri
+        var formData = new FormData();
+        // var blob = new Blob([photoData], { type: 'photo'});
+        // Uint8ClampedArray.from()
+
+        formData.append('photo', {
+            uri: URI,
+            name: `photo.jpg`,
+            type: `image/jpg`
+        });
+        formData.append('collection_id', this.props.collection.id);
+
+        fetch(`http://localhost:3001/photos`, {
+            method: 'POST',
+            // headers: {'Content-Type': 'multipart/form-data'},
+            body: formData
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+        })
+        // console.log(formData)
     }
 
 
@@ -40,22 +80,9 @@ class PhotoUpload extends React.Component {
 
     onDone = (data) => {
         console.log(data)
-
-        // const file = {
-        // name: 'image.jpg',
-        // size: 123456,
-        // type: 'image/jpeg',
-        // path: '/var/lib/...'
-        // }
-
-        // const directUploadsUrl = 'https://localhost:3001/rails/active_storage/direct_uploads';
-
-        // directUpload({ file, directUploadsUrl }, ({ status, progress, cancel }) => {
-        // // status - waiting/progress/finished/error
-        // // progress - 0-100%
-        // // cancel - function to stop uploading a file
-        // });
-
+        // data.map(photoData => {
+        //     this.createPhoto(photoData.blob())
+        // })
     } 
 
   render(){
@@ -63,6 +90,7 @@ class PhotoUpload extends React.Component {
         <SafeAreaView style={styles.container}>
             <AssetsSelector
                 options={{
+                base64: true,
                 assetsType: ['photo'],
                 noAssetsText: 'No media found.',
                 // maxSelections: 10,
@@ -92,7 +120,7 @@ class PhotoUpload extends React.Component {
                     buttonTextColor: 'black',
                     midTextColor: 'black',
                     backFunction: this.goBack,
-                    doneFunction: data => this.onDone,
+                    doneFunction: data => this.onDone(data),
                 },
                 // noAssets:{
                 //     Component:CustomNoAssetsComponent

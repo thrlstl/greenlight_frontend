@@ -15,6 +15,7 @@ class Index extends React.Component {
   }
 
   render(){
+    console.disableYellowBox = true; 
     return (
           <Provider store={store}>
                 <App />

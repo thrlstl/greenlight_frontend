@@ -65,6 +65,7 @@ class Home extends React.Component {
                 gradientImage="Gradient_eRV1whX.png"
                 style={styles.loginOrSignupView}
               ></View>
+            {/* <Image source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/bulb.gif')} style={{width: '100%', height: '100%'}} /> */}
             <Image
               source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/type-logo.png')}
               resizeMode="contain"

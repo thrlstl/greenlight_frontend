@@ -3,6 +3,8 @@ import { TouchableOpacity, StyleSheet, View, ScrollView, Image, SafeAreaView } f
 import Navigation from './Navigation';
 import { connect } from 'react-redux';
 import { selectCollection } from '../Actions/collections';
+import * as ImagePicker from 'expo-image-picker';
+
 
 class BottomNavigation extends React.Component {
     constructor(props){
@@ -14,6 +16,36 @@ class BottomNavigation extends React.Component {
         }
     }
 
+    pickImage = async () => {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: false,
+        allowsMultipleSelection: true,
+        aspect: [4, 3],
+        quality: 1,
+        base64: true,
+        exif: true
+      });
+      // console.log(result)
+      var formData = new FormData();
+        // var blob = new Blob([photoData], { type: 'photo'});
+        // Uint8ClampedArray.from()
+
+        formData.append('photo', result);
+        formData.append('collection_id', this.props.collection.id);
+        formData.append('original_filename', result.uri)
+        console.log(formData)
+
+        fetch(`http://localhost:3001/photos`, {
+            method: 'POST',
+            headers: {'Content-Type': 'multipart/form-data'},
+            body: formData
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+        })
+    }
     createCollection = () => {
       const reqObj = {
         method: 'POST',
@@ -27,7 +59,7 @@ class BottomNavigation extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)
-          // this.props.signupSuccess(data)
+        this.pickImage()
       })
     }
 
@@ -38,7 +70,7 @@ class BottomNavigation extends React.Component {
                 break
             case 'ADD':
                 this.createCollection()
-                this.props.navigation.navigate('Photo Upload')
+                // this.props.navigation.navigate('Photo Upload')
                 break
             case 'PROFILE':
                 this.props.navigation.navigate('Profile')
@@ -55,7 +87,7 @@ class BottomNavigation extends React.Component {
                     <TouchableOpacity
                       onPress={() => this.handlePress('HOME')}>
                         <Image
-                         source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/type-logo.png')}
+                         source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/home-button.png')}
                          resizeMode="contain"
                          style={styles.homeButton}>
                         </Image>
@@ -87,11 +119,18 @@ class BottomNavigation extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+  return {
+      user: state.user,
+      collection: state.collection
+  }
+}
+
 const mapDispatchToProps = {
   selectCollection
 }
 
-export default connect(null, mapDispatchToProps) (BottomNavigation)
+export default connect(mapStateToProps, mapDispatchToProps) (BottomNavigation)
 
 const styles = StyleSheet.create({
   container: {

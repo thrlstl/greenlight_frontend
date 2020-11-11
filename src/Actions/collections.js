@@ -4,3 +4,10 @@ export const selectCollection = (collection) => {
       collection: collection
     }
   }
+
+  export const updateApprovals = (approval) => {
+    return {
+      type: 'UPDATE_APPROVALS',
+      approval: approval
+    }
+  }
