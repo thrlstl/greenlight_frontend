@@ -1,24 +1,20 @@
-import { updateApprovals } from "../Actions/collections"
-
 const collectionsReducer = (state={}, action) => {
     switch(action.type) {
-      case 'SELECT_COLLECTION':
-        return action.collection
-      case 'UPDATE_APPROVALS':
-        let updatedApprovals = {...state}
-        const approvedPhoto = updatedApprovals.photos.find(photo => photo.id === action.approval.photo.id)
-        const newApproval = approvedPhoto.approvals.find(approval => approval.id === action.approval.id)
-        if (!newApproval) {
-          approvedPhoto.approvals.push(action.approval)
-        }
-        else {
-          newApproval.approval = action.approval.approval
-        }
-        return updatedApprovals
+      case 'LOAD_COLLECTIONS':
+        const collections = [...action.collections]
+        collections.sort(function(a,b){
+            if (a.created_at < b.created_at) {
+              return 1
+            }
+            if (a.created_at > b.created_at) {
+              return -1
+            }
+            return 0
+          })
+        return collections
       default:
         return state
     }
   }
-  
-  
+
   export default collectionsReducer

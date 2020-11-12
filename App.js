@@ -54,7 +54,7 @@ class App extends React.Component {
           : 
           
           <Stack.Screen
-          name="Home"
+          name='Home'
           component={Home}
           />
           

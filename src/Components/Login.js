@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import { connect } from 'react-redux';
+import { loadCollections } from '../Actions/collections.js'
 import { loginSuccess } from '../Actions/auth.js';
 import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory';
 
@@ -46,11 +47,8 @@ handleSubmit = () => {
           error: data.error
         })
       } else {
+        this.props.loadCollections(data.collections)
         this.props.loginSuccess(data)
-        // this.props.history.push('/dashboard')
-
-        // update our store with the user
-        // redirect to the dashboard page
       }
     })
 }
@@ -87,7 +85,8 @@ handleSubmit = () => {
 }
 
 const mapDispatchToProps = {
-  loginSuccess
+  loginSuccess,
+  loadCollections
 }
 
 const styles = StyleSheet.create({

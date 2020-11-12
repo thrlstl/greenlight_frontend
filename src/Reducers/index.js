@@ -1,10 +1,12 @@
 import authReducer from './auth';
-import { combineReducers } from 'redux';
+import collectionReducer from './collection';
 import collectionsReducer from './collections';
+import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
     user: authReducer,
-    collection: collectionsReducer
+    collections: collectionsReducer,
+    collection: collectionReducer,
 })
 
 export default allReducers;

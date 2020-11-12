@@ -3,7 +3,7 @@ const authReducer = (state={}, action) => {
       case 'LOGIN_SUCCESS':
         return action.user
       case 'LOGOUT_SUCCESS':
-        return {}
+        return action.user
       case 'SIGNUP_SUCCESS':
         return action.user
       default:

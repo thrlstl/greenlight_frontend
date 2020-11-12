@@ -113,15 +113,6 @@ class PhotoItem extends React.Component {
     }
 
     renderUserApprovals = (item) => {
-    //   const loggedInUserId = this.props.user.id
-    //   return item.approvals.map(approvalItem => {
-    //       if (approvalItem.user_id === loggedInUserId && approvalItem.approval) {
-    //         return <Text>Approved by Logged In User</Text>
-    //       }
-    //       else if (approvalItem.user_id === loggedInUserId && !approvalItem.approval) {
-    //         return <Text>Not Approved by Logged In User</Text>
-    //       }
-    //     })
         if (this.state.approval === null) {
             null
         }
@@ -133,44 +124,28 @@ class PhotoItem extends React.Component {
         }
     }
 
-    renderApprovals = (item) => {
-    //   const approvals = []
-    //   item.approvals.map(approvalItem => {
-    //     if (approvalItem.approval === true) {
-    //       approvals.push(approvalItem)
-    //     }
-    //   })
+    renderApprovals = () => {
         if (this.state.approvals > 0) {
             return <Approvals approvals={this.state.approvals}></Approvals>
         }
     }
 
-    renderDisapprovals = (item) => {
-    //     const disapprovals = []
-    //   item.approvals.map(approvalItem => {
-    //     if (approvalItem.approval === false) {
-    //       disapprovals.push(approvalItem)
-    //     }
-    //   })
+    renderDisapprovals = () => {
       if (this.state.disapprovals > 0) {
             return <Disapprovals disapprovals={this.state.disapprovals}></Disapprovals>
       }
     }
 
-    renderResponses = (item) => {
-      if (item.approvals.length) {
+    renderResponses = () => {
         return <View style={styles.responsesContainer}>
                 <View style={styles.disapprovalsContainer}>
-                {this.renderDisapprovals(item)}
+                {this.renderDisapprovals()}
                 </View>
                 <View style={styles.appprovalsContainer}>
-                {this.renderApprovals(item)}
+                {this.renderApprovals()}
                 </View>
       {/* <View><Text>{item.id}</Text></View> */}
-              {/* {this.renderUserApprovals(item)} */}
-              {/* {this.renderApproveOrDisapprove(item) */}
               </View>
-      }
     }
 
     responsesBackground = function(options) {
@@ -209,7 +184,7 @@ class PhotoItem extends React.Component {
                 <Image key={this.props.item.id} style={styles.image} source={{uri: `http://localhost:3001${this.props.item.photo}`}} />
                   <View style={this.responsesBackground()}>
                     {/* <Text>{this.props.item.caption}</Text> */}
-                    <>{this.renderResponses(this.props.item)}</>
+                    <>{this.renderResponses()}</>
                   </View>
               </DoubleClick>
         </Swipeable>

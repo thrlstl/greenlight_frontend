@@ -3,6 +3,7 @@ import { TouchableOpacity, StyleSheet, View, ScrollView, Image, SafeAreaView } f
 import Navigation from './Navigation';
 import { connect } from 'react-redux';
 import { selectCollection } from '../Actions/collections';
+import { loadCollections } from '../Actions/collections';
 import * as ImagePicker from 'expo-image-picker';
 
 
@@ -10,42 +11,52 @@ class BottomNavigation extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-          name: '',
-          location: '',
+          name: 'collection',
+          location: 'location',
           user_id: this.props.user.id
         }
     }
 
-    pickImage = async () => {
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allowsEditing: false,
-        allowsMultipleSelection: true,
-        aspect: [4, 3],
-        quality: 1,
-        base64: true,
-        exif: true
-      });
-      // console.log(result)
-      var formData = new FormData();
-        // var blob = new Blob([photoData], { type: 'photo'});
-        // Uint8ClampedArray.from()
+    // SINGLE IMAGE PICKER
 
-        formData.append('photo', result);
-        formData.append('collection_id', this.props.collection.id);
-        formData.append('original_filename', result.uri)
-        console.log(formData)
+    // pickImage = async () => {
+    //   let result = await ImagePicker.launchImageLibraryAsync({
+    //     mediaTypes: ImagePicker.MediaTypeOptions.All,
+    //     allowsEditing: false,
+    //     allowsMultipleSelection: true,
+    //     aspect: [4, 3],
+    //     quality: 1,
+    //     base64: true,
+    //     exif: true
+    //   });
 
-        fetch(`http://localhost:3001/photos`, {
-            method: 'POST',
-            headers: {'Content-Type': 'multipart/form-data'},
-            body: formData
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-        })
-    }
+    //   const uri = result.uri
+    //   let uriParts = uri.split('.');
+    //   let fileType = uriParts[1];
+      
+    //     let formData = new FormData();
+    //     formData.append('collection_id', this.props.collection.id);
+    //     formData.append('photo', {
+    //         uri,
+    //         name: `photo.${fileType}`,
+    //         type: `image/${fileType}`,
+    //     });
+      
+    //     fetch(`http://localhost:3001/photos`, {
+    //         method: 'POST',
+    //         body: formData,
+    //         headers: {
+    //           Accept: 'application/json',
+    //           'Content-Type': 'multipart/form-data',
+    //           },
+    //     })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         console.log(data)
+    //     })
+    // }
+    
+    
     createCollection = () => {
       const reqObj = {
         method: 'POST',
@@ -59,18 +70,26 @@ class BottomNavigation extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)
-        this.pickImage()
+      })
+    }
+
+    refreshCollections = () => {
+      fetch(`http://localhost:3001/users/${this.props.user.id}`)
+      .then(resp => resp.json())
+      .then(user => {
+        this.props.loadCollections(user.collections)
       })
     }
 
     handlePress = (name) => {
         switch(name) {
             case 'HOME':
+                this.refreshCollections()
                 this.props.navigation.navigate('Collections')
                 break
             case 'ADD':
                 this.createCollection()
-                // this.props.navigation.navigate('Photo Upload')
+                this.props.navigation.navigate('Photo Upload')
                 break
             case 'PROFILE':
                 this.props.navigation.navigate('Profile')
@@ -127,6 +146,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
+  loadCollections,
   selectCollection
 }
 

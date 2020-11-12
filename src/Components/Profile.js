@@ -21,6 +21,7 @@ class Profile extends React.Component {
 
     handleLogout = () => {
         this.props.navigation.navigate('Home')
+        // this.props.logoutSuccess()
     }
 
   render(){

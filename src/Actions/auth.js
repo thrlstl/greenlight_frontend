@@ -8,6 +8,7 @@ export const loginSuccess = (user) => {
   export const logoutSuccess = () => {
     return {
       type: 'LOGOUT_SUCCESS',
+      user: {}
     }
   }
 

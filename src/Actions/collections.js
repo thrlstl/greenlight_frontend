@@ -1,3 +1,10 @@
+export const loadCollections = (collections) => {
+  return {
+    type: 'LOAD_COLLECTIONS',
+    collections: collections
+  }
+}
+
 export const selectCollection = (collection) => {
     return {
       type: 'SELECT_COLLECTION',

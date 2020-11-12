@@ -1,18 +1,25 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ScrollView, Image, SafeAreaView } from "react-native";
+import { RefreshControl, StyleSheet, View, ScrollView, Image, SafeAreaView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from 'react-redux';
 import Collection from './Collection';
 import BottomNavigation from './Navigation';
 import { selectCollection } from '../Actions/collections';
+import { loadCollections } from '../Actions/collections';
+import Swipeable from 'react-native-swipeable';
+
+const rightContent = <View 
+style={{backgroundColor: '#ffa1a1', width: '100%', height: '100%'}}></View>;
 
 class Collections extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+          refreshing: false,
+        };
     }
 
     selectCollection = (id) => {
-      console.log(id)
       fetch(`http://localhost:3001/collections/${id}`)
       .then(resp => resp.json())
       .then(data => {
@@ -21,8 +28,12 @@ class Collections extends React.Component {
       })
     }
 
+    handleDelete = () => {
+      console.log('delete swipe')
+    }
+
     renderCollection = () => {
-        return this.props.user.collections.map((collection, index) => {
+        return this.props.collections.map((collection, index) => {
             return(
               <TouchableOpacity key={index} onPress={() => this.selectCollection(collection.id)}>
                 <Collection key={collection.id} {...collection} style={styles.collection} />
@@ -38,6 +49,12 @@ class Collections extends React.Component {
                 <View style={styles.collectionsContainer}>
                   <ScrollView
                     horizontal={false}
+                    // refreshControl={
+                    //   <RefreshControl
+                    //     refreshing={this.state.refreshing}
+                    //     onRefresh={this._onRefresh}
+                    //   />
+                    // }
                   >
                       {this.renderCollection()}
                   </ScrollView>
@@ -51,12 +68,14 @@ class Collections extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        user: state.user,
+        collections: state.collections
     }
 }
 
 const mapDispatchToProps = {
-  selectCollection
+  selectCollection,
+  loadCollections
 }
 
 const greenliteColor = 'rgba(169,255,218,1)'

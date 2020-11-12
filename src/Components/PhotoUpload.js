@@ -11,16 +11,8 @@ import {
   TouchableHighlight
 } from "react-native";
 
-// import Swipeable from 'react-native-swipeable';
-// import GridList from 'react-native-grid-list';
-// import DoubleClick from 'react-native-double-click';
+import { selectCollection } from '../Actions/collections';
 
-// import TopNavigation from './TopNavigation'
-// import BottomNavigation from './Navigation';
-
-// import { directUpload } from 'react-native-activestorage';
-
-import axios from 'axios';
 import { AssetsSelector } from 'expo-images-picker';
 import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
@@ -31,58 +23,69 @@ const directUploadsUrl = 'https://localhost:3001/rails/active_storage/direct_upl
 class PhotoUpload extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            numberofPhotosSelected: 0,
+            numberofPhotosLoaded: 0
+        }
     }
 
-    createPhoto = (photoData) => {
-        // const formData = new FormData()
-        // const photo = photoData
-        // const collection_id = this.props.collection.id
-        // console.log(photoData)
-
-        // console.log(photo)
-        // formData.append('photo', photo)
-        // formData.append({
-        //     'photo': photo,
-        //     // 'collection_id': collection_id
-        // })
-        // console.log(formData)
-        
-        // axios.post(`http://localhost:3001/photos`, formData)
-
-        const URI = photoData.uri
-        var formData = new FormData();
-        // var blob = new Blob([photoData], { type: 'photo'});
-        // Uint8ClampedArray.from()
-
-        formData.append('photo', {
-            uri: URI,
-            name: `photo.jpg`,
-            type: `image/jpg`
-        });
+    createPhotos = (photoData) => {
+        const uri = photoData.uri
+        const fileName = photoData.filename.toLowerCase()
+        const fileType = fileName.split('.')[1].toLowerCase()
+      
+        let formData = new FormData();
         formData.append('collection_id', this.props.collection.id);
-
+        formData.append('photo', {
+            uri,
+            name: `${fileName}`,
+            type: `image/${fileType}`,
+        });
+              
         fetch(`http://localhost:3001/photos`, {
             method: 'POST',
-            // headers: {'Content-Type': 'multipart/form-data'},
-            body: formData
+            body: formData,
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'multipart/form-data',
+              },
         })
         .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
+        .then(data => {
+            this.setState({
+                numberofPhotosLoaded: this.state.numberofPhotosLoaded + 1
+            })
+            this.fetchNewCollection()
         })
-        // console.log(formData)
     }
 
+    fetchNewCollection = () => {
+        if (this.state.numberofPhotosSelected === this.state.numberofPhotosLoaded) {
+            fetch(`http://localhost:3001/collections/${this.props.collection.id}`)
+                .then(resp => resp.json())
+                .then(data => {
+                    this.props.selectCollection(data)
+                    this.props.navigation.navigate('View Collection')
+                })
+            this.setState({
+                numberofPhotosSelected: 0,
+                numberofPhotosLoaded: 0
+            })
+        }
+    }
 
     goBack = () => {
         this.props.navigation.goBack()
     }
 
     onDone = (data) => {
-        console.log(data)
-        // data.map(photoData => {
-        //     this.createPhoto(photoData.blob())
-        // })
+        const numberofPhotos = data.length
+        this.setState({
+            numberofPhotosSelected: data.length
+        })
+        data.map(photoData => {
+            this.createPhotos(photoData)
+        })
     } 
 
   render(){
@@ -139,11 +142,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = {
-//   loginSuccess
-// }
+const mapDispatchToProps = {
+  selectCollection
+}
 
-export default connect(mapStateToProps, null)(PhotoUpload)
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoUpload)
 
 const greenliteColor = 'rgba(169,255,218,1)'
 

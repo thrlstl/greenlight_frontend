@@ -14,14 +14,14 @@ function Collection(props) {
     const collectionName = props.name 
     const collectionLocation = props.location 
     // const URL = `http://localhost:3001${storageURL}`
-    const date = moment(props.created_at).startOf('hour').fromNow();
+    const date = moment(props.created_at).fromNow();
 
     const URL = () => {
       if (props.photos.length) {
         return `http://localhost:3001${props.photos[0].photo}` 
       }
       else {
-        return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/portrait-image.png'
+        return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
       }
     }
 
@@ -86,10 +86,10 @@ const styles = StyleSheet.create({
     marginRight: 1
   },
   image18: {
-    top: 4,
-    left: 1,
-    width: 375,
-    height: 210,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: 218,
     position: "absolute"
   },
   image18_imageStyle: {
