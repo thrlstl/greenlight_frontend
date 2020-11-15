@@ -67,7 +67,7 @@ class Home extends React.Component {
               ></View>
             {/* <Image source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/bulb.gif')} style={{width: '100%', height: '100%'}} /> */}
             <Image
-              source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/type-logo.png')}
+              source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/login.gif')}
               resizeMode="contain"
               style={styles.logo}
             ></Image>
@@ -81,7 +81,7 @@ class Home extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
-            <View>
+            <View style={styles.loginOrSignupContainer}>
               {this.renderLoginOrSignUp()}
             </View>
         </SafeAreaView>
@@ -100,36 +100,36 @@ const styles = StyleSheet.create({
   },  loginOrSignupView: {
     width: 375,
     height: 406,
-    backgroundColor: "#a9ffda",
+    backgroundColor: '#c6f9d7',
     marginTop: 406
   },
   logo: {
-    width: 160,
-    height: 155,
-    marginTop: -698,
-    marginLeft: 107
+    width: '100%',
+    height: '100%',
+    marginTop: -890,
+    marginLeft: 0
   },
   loginSignupMenu: {
     width: 188,
     height: 50,
     flexDirection: "row",
-    marginTop: 87
+    marginTop: -350
   },
   loginButton: {
     width: 188,
     height: 50,
-    backgroundColor: "rgba(201,255,233,1)",
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderWidth: 0,
-    borderColor: "rgba(0,0,0,1)",
+    borderColor: 'white',
     borderRightWidth: 0,
     borderLeftWidth: 0,
-    borderTopWidth: 2,
+    borderTopWidth: 0,
     borderBottomWidth: 2
   },
   loginText: {
-    // fontFamily: "roboto-regular",
+    fontFamily: 'Montserrat-SemiBold',
     zIndex: 1,
-    color: "#121212",
+    color: 'white',
     fontSize: 20,
     marginTop: 12,
     marginLeft: 65
@@ -137,15 +137,16 @@ const styles = StyleSheet.create({
   signupButton: {
     width: 188,
     height: 50,
-    backgroundColor: "rgba(201,255,233,1)",
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderWidth: 2,
-    borderColor: "rgba(0,0,0,1)",
+    borderColor: 'white',
     borderRightWidth: 0,
+    borderTopWidth: 0,
     borderLeftWidth: 0
   },
   signupText: {
-    // fontFamily: "roboto-regular",
-    color: "#121212",
+    fontFamily: 'Montserrat-SemiBold',
+    color: 'white',
     fontSize: 20,
     marginTop: 12,
     marginLeft: 55
@@ -155,6 +156,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
     marginRight: -188
+  },
+  loginOrSignupContainer: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#c6f9d7'
   }
 });
 

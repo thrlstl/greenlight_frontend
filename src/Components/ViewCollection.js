@@ -8,7 +8,8 @@ import {
   Button,
   SafeAreaView,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  Animated,
 } from "react-native";
 
 import Swipeable from 'react-native-swipeable';
@@ -28,94 +29,8 @@ class ViewCollection extends React.Component {
         super(props)
     }
 
-    // handleApprove = () => {
-    //   console.log('approved')
-    // }
-
-    // handleDisapprove = () => {
-    //   console.log('disapproved')
-    // }
-
-    // renderUserApprovals = (item) => {
-    //   const loggedInUserId = this.props.user.id
-    //   return item.approvals.map(approvalItem => {
-    //       if (approvalItem.user_id === loggedInUserId && approvalItem.approval) {
-    //         return <Text>Approved by Logged In User</Text>
-    //       }
-    //       else if (approvalItem.user_id === loggedInUserId && !approvalItem.approval) {
-    //         return <Text>Not Approved by Logged In User</Text>
-    //       }
-    //     })
-    // }
-    
-    // renderUserDisapprovals = (item) => {
-    //   console.log('disapprovals')
-    // }
-
-    // // REFACTORING IN PROGRESS
-    // // renderApproveOrDisapprove = (item) => {
-    // //   const approvals = []
-    // //   const disapprovals = []
-    // //   item.approvals.map(approvalItem => {
-    // //     approvalItem.approval ? 
-    // //     approvals.push(approvalItem) :
-    // //     disapprovals.push(approvalItem)
-    // //   })
-    // //   approvals.length ? <Text>{approvals.length} Approve</Text> : null
-    // //   disapprovals.length ? <Text>{disapprovals.length} Disapprove</Text> : null
-    // // }
-
-    // renderApprovals = (item) => {
-    //   const approvals = []
-    //   item.approvals.map(approvalItem => {
-    //     if (approvalItem.approval === true) {
-    //       approvals.push(approvalItem)
-    //     }
-    //   })
-    //     if (approvals.length) {
-    //       return <Text>{approvals.length} Approve</Text>
-    //     }
-    // }
-
-    // renderDisapprovals = (item) => {
-    //   const disapprovals = []
-    //   item.approvals.map(approvalItem => {
-    //     if (approvalItem.approval === false) {
-    //       disapprovals.push(approvalItem)
-    //     }
-    //   })
-    //   if (disapprovals.length) {
-    //     return <Text>{disapprovals.length} Disapprove</Text>
-    //   }
-    // }
-
-    // renderResponses = (item) => {
-    //   if (item.approvals.length) {
-    //     return <View>
-    //           {this.renderApprovals(item)}
-    //           {this.renderDisapprovals(item)}
-    //           {this.renderUserApprovals(item)}
-    //           {/* {this.renderApproveOrDisapprove(item) */}
-    //           </View>
-    //   }
-    // }
-
     renderItem = ({ item, index }) => (
       <PhotoItem item={item} index={index} />
-      // <Swipeable 
-      // // leftContent={leftContent}
-      // // onLeftActionRelease={this.handleApprove}
-      // rightContent={rightContent}
-      // onRightActionComplete={this.handleDisapprove}
-      // >
-      //       <DoubleClick  key={index}>
-      //         <Image key={item.id} style={styles.image} source={{uri: `http://localhost:3001${item.photo}`}} />
-      //           <View style={styles.rect}>
-      //             <Text>{item.caption}</Text>
-      //             <View>{this.renderResponses(item)}</View>
-      //           </View>
-      //       </DoubleClick>
-      // </Swipeable>
       );
 
   render(){
@@ -155,6 +70,11 @@ const styles = StyleSheet.create({
    bottom: 0,
     //   flex: 1,
       backgroundColor: 'black'
+    },
+    toggleContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     photoContainer: {
       marginRight: 0,

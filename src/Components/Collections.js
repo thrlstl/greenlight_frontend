@@ -33,13 +33,15 @@ class Collections extends React.Component {
     }
 
     renderCollection = () => {
+      if (this.props.collections.length) {
         return this.props.collections.map((collection, index) => {
-            return(
-              <TouchableOpacity key={index} onPress={() => this.selectCollection(collection.id)}>
-                <Collection key={collection.id} {...collection} style={styles.collection} />
-              </TouchableOpacity>
-            )
-        })
+          return(
+            <TouchableOpacity key={index} onPress={() => this.selectCollection(collection.id)}>
+              <Collection key={collection.id} {...collection} style={styles.collection} />
+            </TouchableOpacity>
+          )
+      })
+      }
     }
     
     render(){

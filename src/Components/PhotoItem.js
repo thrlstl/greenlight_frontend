@@ -24,6 +24,7 @@ import { updateApprovals } from '../Actions/collections';
 import Disapprovals from './Disapprovals'
 import Approvals from './Approvals'
 import App from '../../App';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 const rightContent = <View 
 style={{backgroundColor: '#ffa1a1', width: '100%', height: '100%'}}></View>;
@@ -172,6 +173,10 @@ class PhotoItem extends React.Component {
         }
       }
 
+      handleLongClick = () => {
+        console.log('long click')
+      }
+
   render(){
     return (
         <Swipeable 
@@ -181,7 +186,8 @@ class PhotoItem extends React.Component {
         onRightActionComplete={() => this.handleDisapprove()}
         >
               <DoubleClick onClick={() => this.handleApprove()}  key={this.props.index}>
-                <Image key={this.props.item.id} style={styles.image} source={{uri: `http://localhost:3001${this.props.item.photo}`}} />
+                <Image
+                 key={this.props.item.id} style={styles.image} source={{uri: `http://localhost:3001${this.props.item.photo}`}} />
                   <View style={this.responsesBackground()}>
                     {/* <Text>{this.props.item.caption}</Text> */}
                     <>{this.renderResponses()}</>

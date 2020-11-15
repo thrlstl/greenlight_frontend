@@ -16,6 +16,7 @@ import { selectCollection } from '../Actions/collections';
 import { AssetsSelector } from 'expo-images-picker';
 import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
+import SplashScreen from './SplashScreen';
 
 const directUploadsUrl = 'https://localhost:3001/rails/active_storage/direct_uploads';
 
@@ -24,10 +25,17 @@ class PhotoUpload extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            splashScreen: false,
             numberofPhotosSelected: 0,
             numberofPhotosLoaded: 0
         }
     }
+    
+      completeSplashScreen = () => {
+        this.setState({
+          splashScreen: false
+        })
+      }
 
     createPhotos = (photoData) => {
         const uri = photoData.uri
@@ -55,7 +63,7 @@ class PhotoUpload extends React.Component {
             this.setState({
                 numberofPhotosLoaded: this.state.numberofPhotosLoaded + 1
             })
-            this.fetchNewCollection()
+            setTimeout(this.fetchNewCollection, 2400)
         })
     }
 
@@ -66,6 +74,9 @@ class PhotoUpload extends React.Component {
                 .then(data => {
                     this.props.selectCollection(data)
                     this.props.navigation.navigate('View Collection')
+                    this.setState({
+                        splashScreen: false
+                    })
                 })
             this.setState({
                 numberofPhotosSelected: 0,
@@ -81,6 +92,7 @@ class PhotoUpload extends React.Component {
     onDone = (data) => {
         const numberofPhotos = data.length
         this.setState({
+            splashScreen: true,
             numberofPhotosSelected: data.length
         })
         data.map(photoData => {
@@ -90,6 +102,7 @@ class PhotoUpload extends React.Component {
 
   render(){
     return (
+        this.state.splashScreen ? <SplashScreen /> :
         <SafeAreaView style={styles.container}>
             <AssetsSelector
                 options={{

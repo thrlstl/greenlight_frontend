@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Text,
   Image,
-  ImageBackground
+  ImageBackground,
+  TextInput
 } from "react-native";
 import moment from 'moment';
 import { connect } from 'react-redux';
@@ -15,23 +16,39 @@ function Collection(props) {
     const collectionLocation = props.location 
     // const URL = `http://localhost:3001${storageURL}`
     const date = moment(props.created_at).fromNow();
+    const photos = props.photos
+    var coverPhoto = photos[Math.floor(Math.random() * photos.length)].photo;
+
 
     const URL = () => {
       if (props.photos.length) {
-        return `http://localhost:3001${props.photos[0].photo}` 
+        return `http://localhost:3001${coverPhoto}` 
       }
       else {
         return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
       }
     }
 
+    const handleChangeCollectionName = () => {
+      console.log('changing')
+    }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button}>
         <View style={styles.collectionContainerStack}>
-          <TouchableOpacity style={styles.collectionContainer}>
-            <Text style={styles.collectionName2}>{collectionName}</Text>
-          </TouchableOpacity>
+          <View style={styles.collectionContainer}>
+              <TextInput
+                onTouchStart={()=>  alert("Hello...")}
+              placeholder={`${collectionName}`}
+              onChangeText={(text) => handleChangeCollectionName(text)}
+              placeholderTextColor="rgba(0,0,0,1)"
+              clearTextOnFocus={true}
+              keyboardAppearance="dark"
+              style={styles.collectionName2}
+            ></TextInput>
+            {/* <Text style={styles.collectionName2}>{collectionName}</Text> */}
+          </View>
           <ImageBackground
             source={{uri: URL()}}
             resizeMode="cover"
@@ -49,6 +66,7 @@ function Collection(props) {
 
 const greenliteColor = 'rgba(169,255,218,1)'
 
+
 const styles = StyleSheet.create({
   container: {
     top: 50,
@@ -62,7 +80,7 @@ const styles = StyleSheet.create({
       height: 3
     },
     elevation: 30,
-    shadowOpacity: 0.52,
+    shadowOpacity: 0.25,
     shadowRadius: 10,
     marginTop: 1
   },
@@ -71,13 +89,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: 'white',
     width: 375,
-    borderWidth: 1,
-    borderColor: "rgba(0,0,0,1)",
+    // borderWidth: 1,
+    borderColor: 'black',
     borderBottomWidth: 3,
     borderTopWidth: 3
   },
   collectionName2: {
-    // fontFamily: "roboto-700",
+    fontFamily: 'Montserrat-SemiBold',
     color: "#121212",
     textAlign: "center",
     fontSize: 25,
@@ -96,7 +114,8 @@ const styles = StyleSheet.create({
     opacity: 0.25
   },
   locationText: {
-    // fontFamily: "roboto-italic",
+    // width: '100%',
+    fontFamily: 'Montserrat-Regular',
     color: "#121212",
     textAlign: "center",
     width: 369,
@@ -110,7 +129,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   date: {
-    // fontFamily: "roboto-italic",
+    fontFamily: 'Montserrat-Regular',
     color: "#121212",
     textAlign: "center",
     marginTop: 10,

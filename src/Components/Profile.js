@@ -84,16 +84,17 @@ const styles = StyleSheet.create({
     marginLeft: 136
     },
     usernameField: {
-    // fontFamily: "roboto-regular",
+    textAlign: 'center',
+    fontFamily: 'Montserrat-SemiBold',
     color: "rgba(0,0,0,1)",
-    height: 25,
-    width: 131,
+    height: 30,
+    width: '100%',
     fontSize: 25,
     marginTop: 39,
-    marginLeft: 122
+    marginLeft: 0
     },
     numCollections: {
-    // fontFamily: "roboto-regular",
+    fontFamily: 'Montserrat-Regular',
     color: "#121212",
     fontSize: 25,
     textAlign: "center",

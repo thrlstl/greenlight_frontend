@@ -58,7 +58,7 @@ handleSubmit = () => {
         <TextInput
           placeholder="USERNAME"
           onChangeText={(text) => this.handleChangeUsername(text)}
-          placeholderTextColor="rgba(0,0,0,1)"
+          placeholderTextColor='black'
           clearTextOnFocus={true}
           keyboardAppearance="dark"
           style={styles.username}
@@ -66,7 +66,7 @@ handleSubmit = () => {
         <TextInput
           placeholder="PASSWORD"
           onChangeText={(text) => this.handleChangePassword(text)}
-          placeholderTextColor="rgba(0,0,0,1)"
+          placeholderTextColor='black'
           clearTextOnFocus={true}
           keyboardAppearance="dark"
           secureTextEntry={true}
@@ -102,47 +102,47 @@ const styles = StyleSheet.create({
     marginLeft: -61
   },
   username: {
-    // fontFamily: "roboto-regular",
-    color: "rgba(0,0,0,1)",
+    fontFamily: 'Montserrat-Regular',
+    color: 'black',
     height: 55,
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 15,
     width: 252,
     borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 100,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 5,
-    shadowOpacity: 1,
-    shadowRadius: 0,
+    borderColor: "white",
+    borderRadius: 30,
+    // shadowColor: "rgba(0,0,0,1)",
+    // shadowOffset: {
+    //   width: 3,
+    //   height: 3
+    // },
+    // elevation: 5,
+    // shadowOpacity: 1,
+    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 93,
     marginLeft: 61
   },
   password: {
-    // fontFamily: "roboto-regular",
-    color: "rgba(0,0,0,1)",
+    fontFamily: 'Montserrat-Regular',
+    color: 'black',
     height: 55,
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 15,
     width: 252,
     borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 100,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 5,
-    shadowOpacity: 1,
-    shadowRadius: 0,
+    borderColor: "white",
+    borderRadius: 30,
+    // shadowColor: "rgba(0,0,0,1)",
+    // shadowOffset: {
+    //   width: 3,
+    //   height: 3
+    // },
+    // elevation: 5,
+    // shadowOpacity: 1,
+    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 14,
     marginLeft: 61
@@ -156,12 +156,13 @@ const styles = StyleSheet.create({
   button: {
     width: 85,
     height: 36,
+    backgroundColor: 'white',
     borderRadius: 20,
-    borderWidth: 2,
-    borderColor: "rgba(0,0,0,1)"
+    borderWidth: 1,
+    borderColor: 'white'
     },
   login2: {
-    // fontFamily: "roboto-700",
+    fontFamily: 'Montserrat-SemiBold',
     color: "black",
     textAlign: "center",
     letterSpacing: 1,

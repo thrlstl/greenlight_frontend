@@ -1,17 +1,66 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { Animated, StyleSheet, View, TouchableOpacity, Text, Animate } from "react-native";
 import { connect } from 'react-redux';
+import SwitchSelector from "react-native-switch-selector";
 
 class TopNavigation extends React.Component {
     constructor(){
         super()
     }
 
+    handleToggle = (value) => {
+      if (value === 'disapproved') {
+        this.handleDisapproved()
+      }
+      else if (value === 'all') {
+        this.handleAll()
+      }
+      else if (value === 'approved') {
+        this.handleApproved()
+      }
+    }
+
+    handleDisapproved = () => {
+      console.log('disapproved')
+    }
+
+    handleAll = () => {
+      console.log('all')
+    }
+
+    handleApproved = () => {
+      console.log('approved')
+    }
+
     render(){
+
+      const images = {
+        heart: require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/heart-icon.png')
+      }
         return (
             <View style={styles.container}>
               <View style={styles.topNavContainerStack}>
                 <View style={styles.topNavContainer}></View>
+                <View style={styles.toggleContainer}>
+                  <SwitchSelector
+                  initial={1}
+                  onPress={(value) => this.handleToggle(value)}
+                  textColor={'black'} //'#7a44cf'
+                  selectedColor={'white'}
+                  borderRadius={'20'}
+                  borderWidth={'1'}
+                  valuePadding={0}
+                  height={30}
+                  borderColor={'black'}
+                  backgroundColor={'white'}
+                  hasPadding
+                  options={[
+                  { value: "disapproved", activeColor: '#fad1d1'}, //images.feminino = require('./path_to/assets/img/feminino.png')
+                  { value: "all", activeColor: '#e1e1e1' },
+                  { value: "approved", activeColor: '#d2fbe9' } //images.masculino = require('./path_to/assets/img/masculino.png')
+                  ]}
+                  />
+                </View>
                 {/* <TouchableOpacity style={styles.notApprovedButton}>
                   <Text style={styles.notApprovedText}>Not Approved</Text>
                 </TouchableOpacity>
@@ -48,6 +97,16 @@ const styles = StyleSheet.create({
       height: 100,
       position: "absolute",
       backgroundColor: "white"
+    },
+    toggleContainer: {
+      left: 120,
+      height: 36,
+      // backgroundColor: "rgba(230, 230, 230,0.45)",
+      width: 150,
+      marginTop: 53,
+      // flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     notApprovedButton: {
       top: 56,
