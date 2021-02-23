@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import { Constants } from 'expo-constants';
 
 export default class SplashScreen extends Component {
   render() {
@@ -17,7 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000',
   },
 });

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Keyboard, TouchableWithoutFeedback, SafeAreaView, KeyboardAvoidingView, TouchableOpacity, StyleSheet, View, Image, Text } from "react-native";
-// import { SafeAreaView } from "react-native-safe-area-context";
 import Login from '../Components/Login';
 import Signup from '../Components/Signup';
 
@@ -11,22 +10,6 @@ class Home extends React.Component {
       view: 'login'
     }
   }
-
-  // handlePress = () => {
-  //   const clicked = !this.state.clicked
-  //   if (this.state.clicked === false) {
-  //     this.setState({
-  //       clicked: clicked,
-  //       title: 'Login'
-  //     })
-  //   }
-  //   else {
-  //     this.setState({
-  //       clicked: clicked,
-  //       title: 'Sign Up'
-  //     })
-  //   }
-  // }
 
   renderLoginOrSignUp = () => {
     if (this.state.view === 'login') {
@@ -55,17 +38,12 @@ class Home extends React.Component {
 
   render(){
     return (
-      // <KeyboardAvoidingView
-      //           behavior={Platform.OS === "ios" ? "padding" : null}
-      //           style={{ flex: 1 }}
-      //       >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <SafeAreaView style={styles.container}>
             <View
                 gradientImage="Gradient_eRV1whX.png"
                 style={styles.loginOrSignupView}
               ></View>
-            {/* <Image source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/bulb.gif')} style={{width: '100%', height: '100%'}} /> */}
             <Image
               source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/login.gif')}
               resizeMode="contain"
@@ -86,7 +64,6 @@ class Home extends React.Component {
             </View>
         </SafeAreaView>
       </TouchableWithoutFeedback>
-    // </KeyboardAvoidingView>
     );
   }
 }
@@ -96,8 +73,8 @@ const greenliteColor = 'rgba(169,255,218,1)'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'flex-end'
-  },  loginOrSignupView: {
+  },  
+  loginOrSignupView: {
     width: 375,
     height: 406,
     backgroundColor: '#c6f9d7',

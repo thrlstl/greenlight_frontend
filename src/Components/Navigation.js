@@ -16,45 +16,6 @@ class BottomNavigation extends React.Component {
           user_id: this.props.user.id
         }
     }
-
-    // SINGLE IMAGE PICKER
-
-    // pickImage = async () => {
-    //   let result = await ImagePicker.launchImageLibraryAsync({
-    //     mediaTypes: ImagePicker.MediaTypeOptions.All,
-    //     allowsEditing: false,
-    //     allowsMultipleSelection: true,
-    //     aspect: [4, 3],
-    //     quality: 1,
-    //     base64: true,
-    //     exif: true
-    //   });
-
-    //   const uri = result.uri
-    //   let uriParts = uri.split('.');
-    //   let fileType = uriParts[1];
-      
-    //     let formData = new FormData();
-    //     formData.append('collection_id', this.props.collection.id);
-    //     formData.append('photo', {
-    //         uri,
-    //         name: `photo.${fileType}`,
-    //         type: `image/${fileType}`,
-    //     });
-      
-    //     fetch(`http://localhost:3001/photos`, {
-    //         method: 'POST',
-    //         body: formData,
-    //         headers: {
-    //           Accept: 'application/json',
-    //           'Content-Type': 'multipart/form-data',
-    //           },
-    //     })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log(data)
-    //     })
-    // }
     
     
     createCollection = () => {
@@ -66,7 +27,7 @@ class BottomNavigation extends React.Component {
         body:  JSON.stringify(this.state)
       }
   
-      fetch('http://localhost:3001/collections', reqObj)
+      fetch('https://greenlite-api.herokuapp.com/collections', reqObj)
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)
@@ -74,7 +35,7 @@ class BottomNavigation extends React.Component {
     }
 
     refreshCollections = () => {
-      fetch(`http://localhost:3001/users/${this.props.user.id}`)
+      fetch(`https://greenlite-api.herokuapp.com/users/${this.props.user.id}`)
       .then(resp => resp.json())
       .then(user => {
         this.props.loadCollections(user.collections)

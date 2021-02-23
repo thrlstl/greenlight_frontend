@@ -48,7 +48,7 @@ handleSubmit = (e) => {
       body:  JSON.stringify(this.state)
     }
 
-    fetch('http://localhost:3001/users', reqObj)
+    fetch('https://greenlite-api.herokuapp.com/users', reqObj)
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {
@@ -57,11 +57,6 @@ handleSubmit = (e) => {
         })
       } else {
         this.props.signupSuccess(data)
-        
-        // this.props.history.push('/dashboard')
-
-        // update our store with the user
-        // redirect to the dashboard page
       }
     })
 }
@@ -150,14 +145,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 49,
     marginLeft: 65
@@ -173,14 +160,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 11,
     marginLeft: 65
@@ -196,14 +175,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 12,
     marginLeft: 65
@@ -219,14 +190,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 26,
     marginLeft: 65
@@ -242,14 +205,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 11,
     marginLeft: 65

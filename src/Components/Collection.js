@@ -22,7 +22,7 @@ function Collection(props) {
 
     const URL = () => {
       if (props.photos.length) {
-        return `http://localhost:3001${coverPhoto}` 
+        return `https://greenlite-api.herokuapp.com/${coverPhoto}` 
       }
       else {
         return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'

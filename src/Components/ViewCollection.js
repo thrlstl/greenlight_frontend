@@ -1,20 +1,10 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Text,
-  Button,
-  SafeAreaView,
-  Image,
-  TouchableHighlight,
-  Animated,
+  View
 } from "react-native";
 
-import Swipeable from 'react-native-swipeable';
 import GridList from 'react-native-grid-list';
-import DoubleClick from 'react-native-double-click';
 
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './Navigation';
@@ -57,10 +47,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = {
-//   loginSuccess
-// }
-
 export default connect(mapStateToProps, null)(ViewCollection)
 
 const styles = StyleSheet.create({
@@ -68,7 +54,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 700,
    bottom: 0,
-    //   flex: 1,
       backgroundColor: 'black'
     },
     toggleContainer: {
@@ -92,7 +77,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         height: 77,
-        // flexDirection: "row"
       },
       button: {
         borderTopColor: 'white',

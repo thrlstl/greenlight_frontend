@@ -39,7 +39,7 @@ handleSubmit = () => {
       body:  JSON.stringify(this.state)
     }
 
-    fetch('http://localhost:3001/auth', reqObj)
+    fetch('https://greenlite-api.herokuapp.com/auth', reqObj)
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {
@@ -112,14 +112,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "white",
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 93,
     marginLeft: 61
@@ -135,14 +127,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "white",
     borderRadius: 30,
-    // shadowColor: "rgba(0,0,0,1)",
-    // shadowOffset: {
-    //   width: 3,
-    //   height: 3
-    // },
-    // elevation: 5,
-    // shadowOpacity: 1,
-    // shadowRadius: 0,
     letterSpacing: 5,
     marginTop: 14,
     marginLeft: 61

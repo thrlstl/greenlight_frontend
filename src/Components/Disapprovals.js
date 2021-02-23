@@ -8,25 +8,6 @@ class Disapprovals extends React.Component {
 
     render(){
         return (
-            // <View style={styles.container}>
-            // <View style={styles.disapprovalButtonImageStack}>
-            // <Image
-            // source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/disapprove-button.png')}
-            // resizeMode="contain"
-            // style={styles.disapprovalButtonImage}
-            // ></Image>
-            // <ImageBackground
-            // source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/red-ellipse.png')}
-            // resizeMode="contain"
-            // style={styles.image3}
-            // imageStyle={styles.image3_imageStyle}
-            // >
-            // <Text style={styles.loremIpsum}>{this.props.disapprovals}</Text>
-            // </ImageBackground>
-            // </View>
-            // </View>
-            // <View style={styles.container}>
-    //   <View style={styles.disapproveContainer}>
         <View style={styles.disapprovalButtonImageStack}>
           <Image
             source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/disapprove-button.png')}
@@ -42,13 +23,9 @@ class Disapprovals extends React.Component {
             <Text style={styles.disapprovalCountText}>{this.props.disapprovals}</Text>
           </ImageBackground>
         </View>
-    //   </View>
-    // </View>
           );
     }
 }
-
-{/* <Text style={styles.disapprovalCount}>{this.props.disapprovals}</Text> */}
 
 const styles = StyleSheet.create({
     container: {
@@ -75,7 +52,6 @@ const styles = StyleSheet.create({
     },
     redEllipse_imageStyle: {},
     disapprovalCountText: {
-    //   fontFamily: "roboto-regular",
       color: "#121212",
       marginTop: 7,
       marginLeft: 11

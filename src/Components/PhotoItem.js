@@ -2,29 +2,17 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  TextInput,
-  TouchableOpacity,
   Text,
-  Button,
-  SafeAreaView,
-  Image,
-  TouchableHighlight,
-  Svg,
-  Ellipse
+  Image
 } from "react-native";
 
 import Swipeable from 'react-native-swipeable';
-import GridList from 'react-native-grid-list';
 import DoubleClick from 'react-native-double-click';
 
-import TopNavigation from './TopNavigation'
-import BottomNavigation from './Navigation';
 import { connect } from 'react-redux';
 import { updateApprovals } from '../Actions/collections';
 import Disapprovals from './Disapprovals'
 import Approvals from './Approvals'
-import App from '../../App';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 const rightContent = <View 
 style={{backgroundColor: '#ffa1a1', width: '100%', height: '100%'}}></View>;
@@ -71,7 +59,6 @@ class PhotoItem extends React.Component {
             }
         })
     }
-    // this.setState({ approval: true, approvals: this.state.approvals =+ 1, disapprovals: this.state.disapprovals - 1 }, this.userApproval)
 
     handleApprove = () => {
         if (this.state.approval === null) {
@@ -105,7 +92,7 @@ class PhotoItem extends React.Component {
             },
             body: JSON.stringify(this.state)
         }
-        fetch('http://localhost:3001/approvals/', reqObj)
+        fetch('https://greenlite-api.herokuapp.com/approvals/', reqObj)
         .then(resp => resp.json())
         .then(approval => {
             console.log(approval)
@@ -145,7 +132,6 @@ class PhotoItem extends React.Component {
                 <View style={styles.appprovalsContainer}>
                 {this.renderApprovals()}
                 </View>
-      {/* <View><Text>{item.id}</Text></View> */}
               </View>
     }
 
@@ -180,8 +166,6 @@ class PhotoItem extends React.Component {
   render(){
     return (
         <Swipeable 
-        // leftContent={leftContent}
-        // onLeftActionRelease={this.handleApprove}
         rightContent={rightContent}
         onRightActionComplete={() => this.handleDisapprove()}
         >
@@ -189,7 +173,6 @@ class PhotoItem extends React.Component {
                 <Image
                  key={this.props.item.id} style={styles.image} source={{uri: `http://localhost:3001${this.props.item.photo}`}} />
                   <View style={this.responsesBackground()}>
-                    {/* <Text>{this.props.item.caption}</Text> */}
                     <>{this.renderResponses()}</>
                   </View>
               </DoubleClick>
@@ -217,8 +200,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 700,
    bottom: 0,
-    //   flex: 1,
-      backgroundColor: 'black'
+    backgroundColor: 'black'
     },
     disapprovalsContainer: {
         width: 150,
@@ -244,7 +226,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         height: 77,
-        // flexDirection: "row"
       },
       responsesContainer: {
         width: '100%',

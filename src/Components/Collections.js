@@ -20,7 +20,7 @@ class Collections extends React.Component {
     }
 
     selectCollection = (id) => {
-      fetch(`http://localhost:3001/collections/${id}`)
+      fetch(`https://greenlite-api.herokuapp.com/collections/${id}`)
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)
