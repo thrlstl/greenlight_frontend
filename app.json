@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "GreenliteFrontend",
-    "slug": "GreenliteFrontend",
+    "name": "Greenlite v1",
+    "slug": "Greelite v1",
     "version": "1.0.0",
     "orientation": "portrait",
     "updates": {
@@ -13,6 +13,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": ""
+    "description": "React Native mobile application for collaborative photo collections with upload and like/dislike functionality."
   }
 }
