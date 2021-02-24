@@ -10,24 +10,31 @@ import {
 } from "react-native";
 import moment from 'moment';
 import { connect } from 'react-redux';
+import placeholderImage from '../assets/images/PlaceholderImage.png'
 
 function Collection(props) {
     const collectionName = props.name 
     const collectionLocation = props.location 
     // const URL = `http://localhost:3001${storageURL}`
+    const defaultCoverPhoto = '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
     const date = moment(props.created_at).fromNow();
     const photos = props.photos
-    var coverPhoto = photos[Math.floor(Math.random() * photos.length)].photo;
+    // var coverPhoto = photos[Math.floor(Math.random() * photos.length)].photo;
 
-
-    const URL = () => {
-      if (props.photos.length) {
-        return `https://greenlite-api.herokuapp.com/${coverPhoto}` 
-      }
-      else {
-        return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
-      }
+    const coverPhoto = () => {
+      photos.length > 0 ? photos[Math.floor(Math.random() * photos.length)].photo : defaultCoverPhoto
     }
+
+    // const URL = () => {
+    //   if (props.photos.length) {
+    //     return `https://greenlite-api.herokuapp.com/${coverPhoto}` 
+    //   }
+    //   else {
+    //     return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
+    //   }
+    // }
+
+    // const URL = '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
 
     const handleChangeCollectionName = () => {
       console.log('changing')
@@ -50,7 +57,7 @@ function Collection(props) {
             {/* <Text style={styles.collectionName2}>{collectionName}</Text> */}
           </View>
           <ImageBackground
-            source={{uri: URL()}}
+            source={{uri: coverPhoto()}}
             resizeMode="cover"
             style={styles.image18}
             imageStyle={styles.image18_imageStyle}

@@ -171,7 +171,7 @@ class PhotoItem extends React.Component {
         >
               <DoubleClick onClick={() => this.handleApprove()}  key={this.props.index}>
                 <Image
-                 key={this.props.item.id} style={styles.image} source={{uri: `http://localhost:3001${this.props.item.photo}`}} />
+                 key={this.props.item.id} style={styles.image} source={{uri: `https://greenlite-api.herokuapp.com/${this.props.item.photo}`}} />
                   <View style={this.responsesBackground()}>
                     <>{this.renderResponses()}</>
                   </View>
