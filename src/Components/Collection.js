@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -9,32 +9,24 @@ import {
   TextInput
 } from "react-native";
 import moment from 'moment';
-import { connect } from 'react-redux';
 import placeholderImage from '../assets/images/PlaceholderImage.png'
+
+const apiURL = 'https://greenlite-api.herokuapp.com/'
 
 function Collection(props) {
     const collectionName = props.name 
     const collectionLocation = props.location 
-    // const URL = `http://localhost:3001${storageURL}`
-    const defaultCoverPhoto = '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
     const date = moment(props.created_at).fromNow();
     const photos = props.photos
-    // var coverPhoto = photos[Math.floor(Math.random() * photos.length)].photo;
 
     const coverPhoto = () => {
-      photos.length > 0 ? photos[Math.floor(Math.random() * photos.length)].photo : defaultCoverPhoto
+      return photos.length > 0 ? {uri: `${apiURL}${randomPhoto()}`} :
+      placeholderImage
     }
 
-    // const URL = () => {
-    //   if (props.photos.length) {
-    //     return `https://greenlite-api.herokuapp.com/${coverPhoto}` 
-    //   }
-    //   else {
-    //     return '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
-    //   }
-    // }
-
-    // const URL = '/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/PlaceholderImage.png'
+    const randomPhoto = () => {
+      return photos[Math.floor(Math.random() * photos.length)].photo
+    }
 
     const handleChangeCollectionName = () => {
       console.log('changing')
@@ -46,24 +38,23 @@ function Collection(props) {
         <View style={styles.collectionContainerStack}>
           <View style={styles.collectionContainer}>
               <TextInput
-                onTouchStart={()=>  alert("Hello...")}
+              onTouchStart={()=>  alert("Hello...")}
               placeholder={`${collectionName}`}
               onChangeText={(text) => handleChangeCollectionName(text)}
               placeholderTextColor="rgba(0,0,0,1)"
               clearTextOnFocus={true}
               keyboardAppearance="dark"
               style={styles.collectionName2}
-            ></TextInput>
-            {/* <Text style={styles.collectionName2}>{collectionName}</Text> */}
+              ></TextInput>
           </View>
-          <ImageBackground
-            source={{uri: coverPhoto()}}
-            resizeMode="cover"
-            style={styles.image18}
-            imageStyle={styles.image18_imageStyle}
-          >
-            <Text style={styles.locationText}>{collectionLocation}</Text>
-          </ImageBackground>
+            <ImageBackground
+              source={coverPhoto()}
+              resizeMode="cover"
+              style={styles.image18}
+              imageStyle={styles.image18_imageStyle}
+            >
+                <Text style={styles.locationText}>{collectionLocation}</Text>
+            </ImageBackground>
         </View>
         <Text style={styles.date}>{date}</Text>
       </TouchableOpacity>
@@ -72,7 +63,6 @@ function Collection(props) {
 }
 
 const greenliteColor = 'rgba(169,255,218,1)'
-
 
 const styles = StyleSheet.create({
   container: {

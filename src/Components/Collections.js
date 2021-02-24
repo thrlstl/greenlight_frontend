@@ -37,7 +37,7 @@ class Collections extends React.Component {
         return this.props.collections.map((collection, index) => {
           return(
             <TouchableOpacity key={index} onPress={() => this.selectCollection(collection.id)}>
-              <Collection key={collection.id} {...collection} photos={collection.photos} style={styles.collection} />
+              <Collection key={collection.id} {...collection} style={styles.collection} />
             </TouchableOpacity>
           )
       })
