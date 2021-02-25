@@ -6,7 +6,7 @@ For questions or feedback on this application, please email me at matthewsteele.
 
 ## Links
 
-[**Video Demo**](https://youtu.be/SDzlYMgTgJo "Video Demo") | [**Expo Project (Live Demo)**](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
+[**Video Demo**](https://youtu.be/SDzlYMgTgJo "Video Demo") | [**Expo Project (Live Demo)**](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project") |  
 [**Backend API (Users)**](https://greenlite-api.herokuapp.com/users "Users") | [**Backend API (Collections)**](https://greenlite-api.herokuapp.com/collections "Collections")
 
 ### Live Demo (in Development)
