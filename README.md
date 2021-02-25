@@ -6,7 +6,7 @@ Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewstee
 
 For questions or feedback on this application, please email me at matthewsteele.chi@gmail.com!
 
-## 𝙇𝙞𝙣𝙠𝙨 [bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
+## 𝙇𝙞𝙣𝙠𝙨<pre> </pre>![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
 
 - [**YouTube** — 𝘝𝘪𝘥𝘦𝘰 𝘋𝘦𝘮𝘰](https://youtu.be/SDzlYMgTgJo "Video Demo")
 - [**Expo** — 𝘓𝘪𝘷𝘦 𝘋𝘦𝘮𝘰](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
