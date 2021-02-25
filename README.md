@@ -1,13 +1,11 @@
 <div align="center">
 	<h1>𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀</h1>
 	<p>
-		<b>Stage your photos for social media with friends in collaborative collections with like/dislike functionality.</b>
+		<b>Stage your photos for social media with friends in collaborative collections with like/dislike functionality. Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewsteeleonline/ "LinkedIn")</b>
 	</p>
 	<br>
 	<br>
 </div>
-
-Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewsteeleonline/ "LinkedIn")
 
 For questions or feedback on this application, please email me at matthewsteele.chi@gmail.com!
 
