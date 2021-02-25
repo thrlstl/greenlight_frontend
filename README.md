@@ -13,10 +13,13 @@ For questions or feedback on this application, please email me at matthewsteele.
 - [**Heroku** — 𝘈𝘗𝘐 𝘌𝘯𝘥𝘱𝘰𝘪𝘯𝘵 (𝘜𝘴𝘦𝘳𝘴)](https://greenlite-api.herokuapp.com/users "Users")
 - [**Heroku** — 𝘈𝘗𝘐 𝘌𝘯𝘥𝘱𝘰𝘪𝘯𝘵 (𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯𝘴)](https://greenlite-api.herokuapp.com/collections "Collections")
 - [**Github** — 𝘉𝘢𝘤𝘬𝘦𝘯𝘥 𝘊𝘰𝘥𝘦](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
+- [**Google Slides** — 𝘖𝘳𝘪𝘨𝘪𝘯𝘢𝘭 𝘞𝘪𝘳𝘦𝘧𝘳𝘢𝘮𝘦𝘴](https://docs.google.com/presentation/d/1JG9L8HLQq4nwDL0WmymSsAhJ2Arh5Z5SpWQfLKfu8SM/edit#slide=id.ga510280fae_0_111 "Expo Project")
+
+https://pdfhost.io/edit?doc=f8a8529c-ae0a-420d-9768-ccfab7360a4a
 
 ## 𝙇𝙞𝙫𝙚 𝘿𝙚𝙢𝙤 (𝙞𝙣 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙢𝙚𝙣𝙩)
 
-While Greenlite isn't quite ready for production, we are up and running on Expo! Try us out, download the Expo app on your device (links below) and scan the QR code to launch Greenlite. Login with lowercase 'username' and 'password' as credentials.
+While Greenlite isn't quite ready for production, we are up and running on Expo (with some limitations)! Try us out, download the Expo app on your device (links below) and scan the QR code to launch Greenlite. Login with lowercase 'username' and 'password' as credentials.
 
 ![qr-code-greenlite](https://user-images.githubusercontent.com/68616411/109096799-d352ba00-76e3-11eb-9052-1fdda6906705.png)
 
