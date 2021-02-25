@@ -1,10 +1,8 @@
-<!-- # 𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀 -->
 <div align="center">
-	<h1>Gifski</h1>
+	<h1>𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀</h1>
 	<p>
 		<b>Stage your photos for social media with friends in collaborative collections with like/dislike functionality.</b>
 	</p>
-	<br>
 	<br>
 	<br>
 </div>
