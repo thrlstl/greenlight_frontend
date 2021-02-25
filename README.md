@@ -30,7 +30,17 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent "Android") - Android Lollipop (5) and greater.  
 🍎 [iOS App Store](https://itunes.com/apps/exponent "Apple") - iOS 10 and greater.
 
-## 𝙁𝙚𝙖𝙩𝙪𝙧𝙚𝙨
+<div align="center">
+	<h1>𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎</h1>
+</div>
+
+## 𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥
+
+![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
+
+## 𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥
+
+![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
 
 ## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
