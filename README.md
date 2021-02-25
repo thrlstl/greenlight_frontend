@@ -55,4 +55,4 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 - Data Generator - [Faker Gem](https://rubygems.org/gems/faker/versions/1.6.3 "Faker Gem")
 
 Thanks for reading,  
-![small-signature](https://user-images.githubusercontent.com/68616411/109107633-b922d700-76f7-11eb-81ba-f28441e8b887.png)
+![small-signature](https://user-images.githubusercontent.com/68616411/109107753-ee2f2980-76f7-11eb-9326-d9a0504ecd4c.png)
