@@ -36,7 +36,7 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 - React Native / Javascript
 - Graphic Design - Adobe Photoshop
-- 3D Motion Design - with Matthew Chen [[𝘞𝘦𝘣𝘴𝘪𝘵𝘦]](https://www.matthewchen.design/ "Site") | [[𝘓𝘪𝘯𝘬𝘦𝘥𝘐𝘯]](https://www.linkedin.com/in/matthewindd/ "LinkedIn") | [[𝘐𝘯𝘴𝘵𝘢𝘨𝘳𝘢𝘮]](https://www.instagram.com/_mattdesign "Instagram")
+- 3D Motion Design - with Matthew Chen [[𝘞𝘦𝘣𝘴𝘪𝘵𝘦]](https://www.matthewchen.design/ "Site") [[𝘓𝘪𝘯𝘬𝘦𝘥𝘐𝘯]](https://www.linkedin.com/in/matthewindd/ "LinkedIn") [[𝘐𝘯𝘴𝘵𝘢𝘨𝘳𝘢𝘮]](https://www.instagram.com/_mattdesign "Instagram")
 - UI / UX - [BuilderX](https://builderx.io/ "BuilderX")
 - Deployment (in Development) - [Expo](https://expo.io/ "Expo")
 - State Management - [React Redux](https://github.com/reduxjs/react-redux "React Redux")
