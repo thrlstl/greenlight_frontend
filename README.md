@@ -1,5 +1,4 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/thrlstl/greenlight_frontend)
-![GitHub top language](https://img.shields.io/github/languages/top/thrlstl/greenlight_frontend)
 
 <div align="center">
 	<h1>𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀</h1>
