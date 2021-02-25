@@ -47,8 +47,6 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 - Double Tap Functionality - [React Native Double Click](https://github.com/dwicao/react-native-double-click "React Native Double Click")
 - Left Swipe Functionality - [React Native Swipeable](https://github.com/jshanson7/react-native-swipeable "React Native Swipeable")
 
-https://www.instagram.com/_mattdesign/
-
 ## 𝘽𝙖𝙘𝙠𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
 - Ruby on Rails API - [Guides](https://guides.rubyonrails.org/api_app.html "Guides")
