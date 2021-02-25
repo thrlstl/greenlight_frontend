@@ -29,17 +29,9 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 🍎 [iOS App Store](https://itunes.com/apps/exponent "Apple") - iOS 10 and greater.
 
-## Features
+## 𝙁𝙚𝙖𝙩𝙪𝙧𝙚𝙨
 
-- Search - Use the search bar to find a movie by title.
-- Pagination - Click on the arrow icons to paginate through search results.
-- Nominate - Hover over and click on a movie poster.
-- View Nominations - Click on upper-right icon.
-- Remove Nomination - Click on a movie in nomination window.
-- Maximum Nominations - Movies can only be nominated once, maximum 5 movies nominated.
-- Animation - Heart icon animates each time you nominate a movie.
-
-## Frontend Technology
+## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
 - React Native / Javascript
 - Design - Adobe Photoshop
@@ -53,7 +45,7 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 - Double Tap Functionality - [React Native Double Click](https://github.com/dwicao/react-native-double-click "React Native Double Click")
 - Left Swipe Functionality - [React Native Swipeable](https://github.com/jshanson7/react-native-swipeable "React Native Swipeable")
 
-## Backend Technology
+## 𝘽𝙖𝙘𝙠𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
 - Ruby on Rails API - [Guides](https://guides.rubyonrails.org/api_app.html "Guides")
 - Database - [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
