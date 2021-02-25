@@ -54,6 +54,8 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 - Custom JSON - [Active Model Serializers](https://rubygems.org/gems/active_model_serializers/versions/0.10.2 "Active Model Serializers")
 - Data Generator - [Faker Gem](https://rubygems.org/gems/faker/versions/1.6.3 "Faker Gem")
 
+##
+
 Thank you for reading,
 <br>
 <img src="https://user-images.githubusercontent.com/68616411/109108102-80373200-76f8-11eb-9c68-0580b20d1b18.png" alt="sig" width="200"/>
