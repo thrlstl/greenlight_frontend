@@ -4,7 +4,7 @@ Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewstee
 
 For questions or feedback on this application, please email me at matthewsteele.chi@gmail.com!
 
-![Feb-24-2021 21-33-44](https://user-images.githubusercontent.com/68616411/109099062-072fde80-76e8-11eb-8c72-e3bb1f76b43a.gif)
+![Feb-24-2021 21-44-23](https://user-images.githubusercontent.com/68616411/109099936-870a7880-76e9-11eb-9379-4e9d01221789.gif)
 
 ## 𝙇𝙞𝙣𝙠𝙨 &nbsp; &nbsp; ![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
 
