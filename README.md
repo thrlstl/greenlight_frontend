@@ -18,7 +18,7 @@ For questions or feedback on this application, please email me at matthewsteele.
 
 While Greenlite isn't quite ready for production, we are up and running on Expo! Try us out, download the Expo app on your device (links below) and scan the QR code to launch Greenlite. Login with lowercase 'username' and 'password' as credentials.
 
-![qr-code-greenlite](https://user-images.githubusercontent.com/68616411/109096630-85d64d00-76e3-11eb-97b1-96385eb9ee9b.png)
+![qr-code-greenlite](https://user-images.githubusercontent.com/68616411/109096799-d352ba00-76e3-11eb-9052-1fdda6906705.png)
 
 🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent "Android") - Android Lollipop (5) and greater.
 
