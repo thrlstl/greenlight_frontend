@@ -1,10 +1,10 @@
 # 𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀
 
-![Feb-22-2021 20-28-54](https://user-images.githubusercontent.com/68616411/108795736-a6b86a00-754c-11eb-8d80-12203e29d792.gif)
-
 Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewsteeleonline/ "LinkedIn")
 
 For questions or feedback on this application, please email me at matthewsteele.chi@gmail.com!
+
+![Feb-22-2021 20-28-54](https://user-images.githubusercontent.com/68616411/108795736-a6b86a00-754c-11eb-8d80-12203e29d792.gif)
 
 ## 𝙇𝙞𝙣𝙠𝙨 &nbsp; &nbsp; ![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
 
