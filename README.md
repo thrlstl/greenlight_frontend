@@ -1,3 +1,6 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/thrlstl/greenlight_frontend)
+![GitHub top language](https://img.shields.io/github/languages/top/thrlstl/greenlight_frontend)
+
 <div align="center">
 	<h1>𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀</h1>
 </div>
@@ -5,9 +8,6 @@
 𝘚𝘵𝘢𝘨𝘦 𝘺𝘰𝘶𝘳 𝘱𝘩𝘰𝘵𝘰𝘴 𝘧𝘰𝘳 𝘴𝘰𝘤𝘪𝘢𝘭 𝘮𝘦𝘥𝘪𝘢 𝘸𝘪𝘵𝘩 𝘧𝘳𝘪𝘦𝘯𝘥𝘴 𝘪𝘯 𝘤𝘰𝘭𝘭𝘢𝘣𝘰𝘳𝘢𝘵𝘪𝘷𝘦 𝘤𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯𝘴 𝘸𝘪𝘵𝘩 𝘭𝘪𝘬𝘦/𝘥𝘪𝘴𝘭𝘪𝘬𝘦 𝘧𝘶𝘯𝘤𝘵𝘪𝘰𝘯𝘢𝘭𝘪𝘵𝘺.
 
 𝘾𝙧𝙚𝙖𝙩𝙚𝙙 𝙗𝙮 𝙈𝙖𝙩𝙩𝙝𝙚𝙬 𝙎𝙩𝙚𝙚𝙡𝙚 — [LinkedIn](https://www.linkedin.com/in/matthewsteeleonline/ "LinkedIn"). 𝘍𝘰𝘳 𝘲𝘶𝘦𝘴𝘵𝘪𝘰𝘯𝘴 𝘰𝘳 𝘧𝘦𝘦𝘥𝘣𝘢𝘤𝘬 𝘰𝘯 𝘵𝘩𝘪𝘴 𝘢𝘱𝘱𝘭𝘪𝘤𝘢𝘵𝘪𝘰𝘯, 𝘱𝘭𝘦𝘢𝘴𝘦 𝘦𝘮𝘢𝘪𝘭 𝘮𝘦 𝘢𝘵 𝘮𝘢𝘵𝘵𝘩𝘦𝘸𝘴𝘵𝘦𝘦𝘭𝘦.𝘤𝘩𝘪@𝘨𝘮𝘢𝘪𝘭.𝘤𝘰𝘮!
-
-![GitHub last commit](https://img.shields.io/github/last-commit/thrlstl/greenlight_frontend)
-![GitHub top language](https://img.shields.io/github/languages/top/thrlstl/greenlight_frontend)
 
 <br>
 
