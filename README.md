@@ -4,7 +4,7 @@ Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewstee
 
 For questions or feedback on this application, please email me at matthewsteele.chi@gmail.com!
 
-![Feb-22-2021 20-28-54](https://user-images.githubusercontent.com/68616411/108795736-a6b86a00-754c-11eb-8d80-12203e29d792.gif)
+![Feb-24-2021 21-33-44](https://user-images.githubusercontent.com/68616411/109099062-072fde80-76e8-11eb-8c72-e3bb1f76b43a.gif)
 
 ## 𝙇𝙞𝙣𝙠𝙨 &nbsp; &nbsp; ![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
 
@@ -28,8 +28,6 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 🍎 [iOS App Store](https://itunes.com/apps/exponent "Apple") - iOS 10 and greater.
 
 ## Features
-
-![Feb-24-2021 21-25-15](https://user-images.githubusercontent.com/68616411/109098398-def3b000-76e6-11eb-9a71-452300ffe968.gif) ![Feb-24-2021 21-25-15](https://user-images.githubusercontent.com/68616411/109098398-def3b000-76e6-11eb-9a71-452300ffe968.gif)
 
 - Search - Use the search bar to find a movie by title.
 - Pagination - Click on the arrow icons to paginate through search results.
