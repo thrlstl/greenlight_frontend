@@ -1,4 +1,13 @@
-# 𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀
+<!-- # 𝙂𝙍𝙀𝙀𝙉𝙇𝙄𝙏𝙀 -->
+<div align="center">
+	<h1>Gifski</h1>
+	<p>
+		<b>Stage your photos for social media with friends in collaborative collections with like/dislike functionality.</b>
+	</p>
+	<br>
+	<br>
+	<br>
+</div>
 
 Created by Matthew Steele — [LinkedIn](https://www.linkedin.com/in/matthewsteeleonline/ "LinkedIn")
 
@@ -9,14 +18,11 @@ For questions or feedback on this application, please email me at matthewsteele.
 ## 𝙇𝙞𝙣𝙠𝙨 &nbsp; &nbsp; ![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
 
 - [**YouTube** — 𝘝𝘪𝘥𝘦𝘰 𝘋𝘦𝘮𝘰](https://youtu.be/SDzlYMgTgJo "Video Demo")
-- [**Expo** — 𝘗𝘳𝘰𝘫𝘦𝘤𝘵](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
-- [**Expo** — 𝘓𝘪𝘷𝘦 𝘋𝘦𝘮𝘰 (𝘔𝘰𝘣𝘪𝘭𝘦 𝘖𝘯𝘭𝘺)](exp://exp.host/@thrlstl/Greenlite-v1 "Expo Project")
+- [**Expo** — 𝘓𝘪𝘷𝘦 𝘋𝘦𝘮𝘰](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
 - [**Heroku** — 𝘈𝘗𝘐 𝘌𝘯𝘥𝘱𝘰𝘪𝘯𝘵 (𝘜𝘴𝘦𝘳𝘴)](https://greenlite-api.herokuapp.com/users "Users")
 - [**Heroku** — 𝘈𝘗𝘐 𝘌𝘯𝘥𝘱𝘰𝘪𝘯𝘵 (𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯𝘴)](https://greenlite-api.herokuapp.com/collections "Collections")
 - [**Github** — 𝘉𝘢𝘤𝘬𝘦𝘯𝘥 𝘊𝘰𝘥𝘦](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
 - [**Google Slides** — 𝘖𝘳𝘪𝘨𝘪𝘯𝘢𝘭 𝘞𝘪𝘳𝘦𝘧𝘳𝘢𝘮𝘦𝘴](https://docs.google.com/presentation/d/1JG9L8HLQq4nwDL0WmymSsAhJ2Arh5Z5SpWQfLKfu8SM/edit#slide=id.ga510280fae_0_111 "Expo Project")
-
-https://pdfhost.io/edit?doc=f8a8529c-ae0a-420d-9768-ccfab7360a4a
 
 ## 𝙇𝙞𝙫𝙚 𝘿𝙚𝙢𝙤 (𝙞𝙣 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙢𝙚𝙣𝙩)
 
