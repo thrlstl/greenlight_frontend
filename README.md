@@ -41,20 +41,24 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ## Frontend Technology
 
-- React / Javascript
-- [OMDb API](http://omdbapi.com/ "OMDb API") - The Open Movie Database (Movie Search)
-- React Hooks
-- HTML / CSS
-- Animations - [Animista](https://animista.net/ "Animista.net")
+- React Native / Javascript
 - Design - Adobe Photoshop
-- Deployment - Netlify
+- UI / UX - [BuilderX](https://builderx.io/ "BuilderX")
+- Deployment (in Development) - [Expo](https://expo.io/ "Expo")
+- State Management - [React Redux](https://github.com/reduxjs/react-redux "React Redux")
+- Debugging - [React Native Debugger](https://github.com/jhen0409/react-native-debugger "React Native Debugger")
+- Navigation - [React Navigation](https://github.com/react-navigation/react-navigation "React Navigation")
+- Assets Selector - [Expo Images Picker](https://github.com/natysoz/expo-images-picker "React Navigation")
+- Swipeable Grid - [React Native Grid List](https://github.com/gusgard/react-native-grid-list "React Native Grid List")
+- Double Tap Functionality - [React Native Double Click](https://github.com/dwicao/react-native-double-click "React Native Double Click")
+- Left Swipe Functionality - [React Native Swipeable](https://github.com/jshanson7/react-native-swipeable "React Native Swipeable")
 
 ## Backend Technology
 
-- React / Javascript
-- [OMDb API](http://omdbapi.com/ "OMDb API") - The Open Movie Database (Movie Search)
-- React Hooks
-- HTML / CSS
-- Animations - [Animista](https://animista.net/ "Animista.net")
-- Design - Adobe Photoshop
-- Deployment - Netlify
+- Ruby on Rails API - [Guides](https://guides.rubyonrails.org/api_app.html "Guides")
+- Database - [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
+- API Host (while in development) - [Heroku](https://heroku.com "Heroku")
+- Data Encryption - [bcrypt](https://rubygems.org/gems/bcrypt/versions/3.1.12 "bcrypt")
+- File Uploads (Images) - [Active Storage](https://guides.rubyonrails.org/v5.2.0/active_storage_overview.html2 "Active Storage")
+- Custom JSON - [Active Model Serializers](https://rubygems.org/gems/active_model_serializers/versions/0.10.2 "Active Model Serializers")
+- Data Generator - [Faker Gem](https://rubygems.org/gems/faker/versions/1.6.3 "Faker Gem")
