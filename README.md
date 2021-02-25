@@ -25,7 +25,7 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ![qr-code-greenlite](https://user-images.githubusercontent.com/68616411/109096799-d352ba00-76e3-11eb-9052-1fdda6906705.png)
 
-🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent "Android") - Android Lollipop (5) and greater.
+🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent "Android") - Android Lollipop (5) and greater.  
 🍎 [iOS App Store](https://itunes.com/apps/exponent "Apple") - iOS 10 and greater.
 
 ## 𝙁𝙚𝙖𝙩𝙪𝙧𝙚𝙨
@@ -54,6 +54,6 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 - Custom JSON - [Active Model Serializers](https://rubygems.org/gems/active_model_serializers/versions/0.10.2 "Active Model Serializers")
 - Data Generator - [Faker Gem](https://rubygems.org/gems/faker/versions/1.6.3 "Faker Gem")
 
-Thanks for reading,
+Thank you for reading,
 <br>
 <img src="https://user-images.githubusercontent.com/68616411/109108102-80373200-76f8-11eb-9c68-0580b20d1b18.png" alt="sig" width="200"/>
