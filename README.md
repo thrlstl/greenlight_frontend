@@ -12,7 +12,7 @@
 
 ![Feb-24-2021 21-44-23](https://user-images.githubusercontent.com/68616411/109099936-870a7880-76e9-11eb-9379-4e9d01221789.gif)
 
-## 𝙇𝙞𝙣𝙠𝙨 &nbsp; &nbsp; ![bulb-icon2](https://user-images.githubusercontent.com/68616411/109095132-c4b6d380-76e0-11eb-9e0b-1fa3d9ebbc28.png)
+## 𝙇𝙞𝙣𝙠𝙨
 
 - [**YouTube** — 𝘝𝘪𝘥𝘦𝘰 𝘋𝘦𝘮𝘰](https://youtu.be/SDzlYMgTgJo "Video Demo")
 - [**Expo** — 𝘓𝘪𝘷𝘦 𝘋𝘦𝘮𝘰](https://expo.io/@thrlstl/projects/Greenlite-v1 "Expo Project")
