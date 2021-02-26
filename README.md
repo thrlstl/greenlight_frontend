@@ -32,7 +32,11 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ## 𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎
 
-<!-- <div align="center">
+|                                                         𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------: |
+| ![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif) |
+
+<div align="center">
 	<h3>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h3>
 </div>
 
@@ -42,15 +46,9 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
     <h3>𝘗𝘩𝘰𝘵𝘰 𝘚𝘦𝘭𝘦𝘤𝘵𝘪𝘰𝘯 / 𝘜𝘱𝘭𝘰𝘢𝘥𝘴</h3>
 </div>
 
-![assets-selector](https://user-images.githubusercontent.com/68616411/109239132-64846800-779a-11eb-9399-9e3296ab3399.gif) -->
+![assets-selector](https://user-images.githubusercontent.com/68616411/109239132-64846800-779a-11eb-9399-9e3296ab3399.gif)
 
-| 𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥 | 𝘗𝘩𝘰𝘵𝘰 𝘚𝘦𝘭𝘦𝘤𝘵𝘪𝘰𝘯 / 𝘜𝘱𝘭𝘰𝘢𝘥𝘴 |
-| :-------------: | :-----------------------: |
-
-![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
-| ![assets-selector](https://user-images.githubusercontent.com/68616411/109239132-64846800-779a-11eb-9399-9e3296ab3399.gif)
-
-<!-- <div align="center">
+<div align="center">
     <h3>𝘋𝘰𝘶𝘣𝘭𝘦-𝘛𝘢𝘱 𝘓𝘪𝘬𝘦𝘴</h3>
 </div>
 
@@ -60,11 +58,7 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
     <h3>𝘓𝘦𝘧𝘵-𝘚𝘸𝘪𝘱𝘦 𝘋𝘪𝘴𝘭𝘪𝘬𝘦𝘴</h3>
 </div>
 
-![dislike-functionality](https://user-images.githubusercontent.com/68616411/109237826-ffc80e00-7797-11eb-965a-6322a846b4fc.gif) -->
-
-|                                                       𝘋𝘰𝘶𝘣𝘭𝘦-𝘛𝘢𝘱 𝘓𝘪𝘬𝘦𝘴                                                       |                                                       𝘓𝘦𝘧𝘵-𝘚𝘸𝘪𝘱𝘦 𝘋𝘪𝘴𝘭𝘪𝘬𝘦𝘴                                                       |
-| :--------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
-| ![like-functionality](https://user-images.githubusercontent.com/68616411/109237317-f25e5400-7796-11eb-871b-a0442d327d84.gif) | ![dislike-functionality](https://user-images.githubusercontent.com/68616411/109237826-ffc80e00-7797-11eb-965a-6322a846b4fc.gif) |
+![dislike-functionality](https://user-images.githubusercontent.com/68616411/109237826-ffc80e00-7797-11eb-965a-6322a846b4fc.gif)
 
 <div align="center">
     <h3>𝘚𝘸𝘪𝘱𝘦 𝘕𝘢𝘷𝘪𝘨𝘢𝘵𝘪𝘰𝘯</h3>
