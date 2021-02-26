@@ -62,9 +62,9 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif) -->
 
-<h3>𝘚𝘸𝘪𝘱𝘦 𝘕𝘢𝘷𝘪𝘨𝘢𝘵𝘪𝘰𝘯</h3>  |  <h3>𝘚𝘸𝘪𝘱𝘦 𝘕𝘢𝘷𝘪𝘨𝘢𝘵𝘪𝘰𝘯</h3>
-:-------------------------:|:-------------------------:
-![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif)  |  ![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif)
+|                                                       Solarized dark                                                       |                                                      Solarized Ocean                                                       |
+| :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+| ![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif) | ![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif) |
 
 ## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
