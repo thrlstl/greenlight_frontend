@@ -39,10 +39,16 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 ![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
 
 <div align="center">
-    <h3>𝘋𝘰𝘶𝘣𝘭𝘦 𝘛𝘢𝘱 𝘓𝘪𝘬𝘦𝘴</h3>
+    <h3>𝘋𝘰𝘶𝘣𝘭𝘦-𝘛𝘢𝘱 𝘓𝘪𝘬𝘦𝘴</h3>
 </div>
 
 ![like-functionality](https://user-images.githubusercontent.com/68616411/109237317-f25e5400-7796-11eb-871b-a0442d327d84.gif)
+
+<div align="center">
+    <h3>𝘓𝘦𝘧𝘵-𝘚𝘸𝘪𝘱𝘦 𝘋𝘪𝘴𝘭𝘪𝘬𝘦𝘴</h3>
+</div>
+
+![dislike-functionality](https://user-images.githubusercontent.com/68616411/109237826-ffc80e00-7797-11eb-965a-6322a846b4fc.gif)
 
 ## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
