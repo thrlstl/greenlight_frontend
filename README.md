@@ -50,6 +50,12 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ![dislike-functionality](https://user-images.githubusercontent.com/68616411/109237826-ffc80e00-7797-11eb-965a-6322a846b4fc.gif)
 
+<div align="center">
+    <h3>𝘗𝘩𝘰𝘵𝘰 𝘚𝘦𝘭𝘦𝘤𝘵𝘪𝘰𝘯 / 𝘜𝘱𝘭𝘰𝘢𝘥𝘴</h3>
+</div>
+
+![assets-selector](https://user-images.githubusercontent.com/68616411/109239132-64846800-779a-11eb-9399-9e3296ab3399.gif)
+
 ## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
 - React Native / Javascript
