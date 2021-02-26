@@ -98,7 +98,7 @@ Flash forward to my final three weeks in Flatiron School's Software Engineering 
 - 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 — Users should be able to filter a collection by photos liked or disliked by collaborators.
 - 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗩𝗶𝗲𝘄 𝗦𝘁𝘆𝗹𝗲 — Users should be able to change the appearance of a collections view. (list or grid)
 - 𝗣𝗵𝗼𝘁𝗼 𝗩𝗶𝗲𝘄 — Users should be able to expand a photo when single-clicked.
-- 𝗦𝗮𝘃𝗲 𝘁𝗼 𝗖𝗮𝗺𝗲𝗿𝗮 𝗥𝗼𝗹𝗹 — Users should be able to save to camera roll when they hold and press a photo.
+- 𝗦𝗮𝘃𝗲 𝘁𝗼 𝗖𝗮𝗺𝗲𝗿𝗮 𝗥𝗼𝗹𝗹 — Users should be able to save to camera roll when they press and hold a photo.
 
 ##
 
