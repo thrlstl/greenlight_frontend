@@ -32,7 +32,7 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 
 ## 𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎
 
-<div align="center">
+<!-- <div align="center">
 	<h3>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h3>
 </div>
 
@@ -60,7 +60,13 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
     <h3>𝘚𝘸𝘪𝘱𝘦 𝘕𝘢𝘷𝘪𝘨𝘢𝘵𝘪𝘰𝘯</h3>
 </div>
 
-![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif)
+![swipe-navigation](https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif) -->
+
+|                                                                                                                                                                                            |                                                                                                                                                                            |                                                                                                                                                                            |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> 𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥 | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> |
+|         <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif">         | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> |
+|         <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif">         | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/68616411/109239684-a2ce5700-779b-11eb-9e5f-299266ddcba7.gif"> |
 
 ## 𝙁𝙧𝙤𝙣𝙩𝙚𝙣𝙙 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮
 
