@@ -33,13 +33,13 @@ While Greenlite isn't quite ready for production, we are up and running on Expo 
 ## 𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎
 
 <div align="center">
-	<h5>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h5>
+	<h3>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h3>
 </div>
 
 ![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
 
 <div align="center">
-    <h5>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h5>
+    <h3>𝘊𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘍𝘦𝘦𝘥</h3>
 </div>
 
 ![collection-scroll-view](https://user-images.githubusercontent.com/68616411/109235020-7530e000-7792-11eb-9be8-5cc8b1df1569.gif)
