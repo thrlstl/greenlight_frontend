@@ -1,90 +1,78 @@
-import React from 'react';
+import React, {  useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Components/Home'
 import Collections from './src/Components/Collections';
 import ViewCollection from './src//Components/ViewCollection';
 import Profile from './src/Components/Profile'
-import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './src/Components/SplashScreen';
 import PhotoUpload from './src/Components/PhotoUpload';
-// import SplashScreen from './src/Components/SplashScreen';
 
+function App(props) {
+  
+  const Stack = createStackNavigator();
+  const user = props.user
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [splashScreen, setSplashScreen] = useState(true)
 
-const Stack = createStackNavigator();
+  useEffect(() => {
+    setTimeout(() => {
+      setSplashScreen(false)
+    }, 2400)
+  }, [])
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      splashScreen: true
-    }
-  }
-
-  componentDidMount() {
-    setTimeout(this.completeSplashScreen, 2400)
-  }
-
-  completeSplashScreen = () => {
-    this.setState({
-      splashScreen: false
+  useEffect(() => {
+    setLoggedIn(() => {
+      return user.id ? true : false
     })
+  }, [user])
+
+  const renderStack = () => {
+      return (
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+            headerShown: false
+            }}>
+              
+          { loggedIn 
+
+          ?   <Stack.Screen
+              name="Collections"
+              component={Collections}
+              />
+              
+          :  <Stack.Screen
+              name='Home'
+              component={Home}
+              />  }
+
+              <Stack.Screen
+              name='View Collection'
+              component={ViewCollection}
+              />
+
+              <Stack.Screen
+              name='Profile'
+              component={Profile}
+              />
+
+              <Stack.Screen
+              name='Photo Upload'
+              component={PhotoUpload}
+              />
+
+            </Stack.Navigator>
+        </NavigationContainer>
+      )
   }
 
-  renderStack = () => {
-    const user = this.props.user.id
     return (
-    <NavigationContainer>
-        <Stack.Navigator
-        screenOptions={{
-        headerShown: false
-        }}>
-          
-          {
-            
-          user 
-            
-          ? 
-            
-          <Stack.Screen
-          name="Collections"
-          component={Collections}
-          /> 
-          
-          : 
-          
-          <Stack.Screen
-          name='Home'
-          component={Home}
-          />
-          
-          }
-
-          <Stack.Screen
-          name='View Collection'
-          component={ViewCollection}
-          />
-
-          <Stack.Screen
-          name='Profile'
-          component={Profile}
-          />
-
-          <Stack.Screen
-          name='Photo Upload'
-          component={PhotoUpload}
-          />
-
-        </Stack.Navigator>
-      </NavigationContainer>
-    )
-  }
-
-  render(){
-    return (
-    this.state.splashScreen ? <SplashScreen /> : this.renderStack()
+      splashScreen 
+      ? <SplashScreen /> 
+      : renderStack()
     );
-  }
 }
 
 const mapStateToProps = (state) => {

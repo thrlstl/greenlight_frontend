@@ -8,6 +8,9 @@ import { selectCollection } from '../Actions/collections';
 import { loadCollections } from '../Actions/collections';
 import Swipeable from 'react-native-swipeable';
 
+import API from './API'
+const apiURL = API()
+
 const rightContent = <View 
 style={{backgroundColor: '#ffa1a1', width: '100%', height: '100%'}}></View>;
 
@@ -20,7 +23,7 @@ class Collections extends React.Component {
     }
 
     selectCollection = (id) => {
-      fetch(`https://greenlite-api.herokuapp.com/collections/${id}`)
+      fetch(`${apiURL}collections/${id}`)
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)

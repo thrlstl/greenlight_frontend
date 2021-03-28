@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { signupSuccess } from '../Actions/auth.js'
 import { KeyboardAccessoryNavigation } from 'react-native-keyboard-accessory'
 
+import API from './API'
+const apiURL = API()
+
 class Signup extends React.Component {
     constructor(props){
         super(props)
@@ -48,7 +51,7 @@ handleSubmit = (e) => {
       body:  JSON.stringify(this.state)
     }
 
-    fetch('https://greenlite-api.herokuapp.com/users', reqObj)
+    fetch(`${apiURL}users`, reqObj)
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {

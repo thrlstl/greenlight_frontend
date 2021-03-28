@@ -13,6 +13,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "React Native mobile application for collaborative photo collections with upload and like/dislike functionality."
+    "description": "React Native mobile application for collaborative photo collections with upload and like/dislike functionality.",
+    "githubUrl": "https://github.com/thrlstl/greenlight_frontend"
   }
 }

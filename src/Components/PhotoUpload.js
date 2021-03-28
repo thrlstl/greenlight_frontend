@@ -18,7 +18,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import SplashScreen from './SplashScreen';
 
-const directUploadsUrl = 'https://greenlite-api.herokuapp.com/rails/active_storage/direct_uploads';
+import API from './API'
+const apiURL = API()
+
+const directUploadsUrl = `${apiURL}rails/active_storage/direct_uploads`;
 
 
 class PhotoUpload extends React.Component {
@@ -50,7 +53,7 @@ class PhotoUpload extends React.Component {
             type: `image/${fileType}`,
         });
               
-        fetch(`https://greenlite-api.herokuapp.com/photos`, {
+        fetch(`${apiURL}photos`, {
             method: 'POST',
             body: formData,
             headers: {
@@ -69,7 +72,7 @@ class PhotoUpload extends React.Component {
 
     fetchNewCollection = () => {
         if (this.state.numberofPhotosSelected === this.state.numberofPhotosLoaded) {
-            fetch(`https://greenlite-api.herokuapp.com/collections/${this.props.collection.id}`)
+            fetch(`${apiURL}collections/${this.props.collection.id}`)
                 .then(resp => resp.json())
                 .then(data => {
                     this.props.selectCollection(data)

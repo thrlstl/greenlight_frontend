@@ -11,7 +11,9 @@ import {
 import moment from 'moment';
 import placeholderImage from '../assets/images/PlaceholderImage.png'
 
-const apiURL = 'https://greenlite-api.herokuapp.com/'
+import API from './API'
+const apiURL = API()
+
 
 function Collection(props) {
     const collectionName = props.name 

@@ -47,8 +47,8 @@ class TopNavigation extends React.Component {
                   onPress={(value) => this.handleToggle(value)}
                   textColor={'black'} //'#7a44cf'
                   selectedColor={'white'}
-                  borderRadius={'20'}
-                  borderWidth={'1'}
+                  borderRadius={20}
+                  borderWidth={1}
                   valuePadding={0}
                   height={30}
                   borderColor={'black'}

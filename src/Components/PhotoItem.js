@@ -14,6 +14,10 @@ import { updateApprovals } from '../Actions/collections';
 import Disapprovals from './Disapprovals'
 import Approvals from './Approvals'
 
+import API from './API'
+const apiURL = API()
+
+
 const rightContent = <View 
 style={{backgroundColor: '#ffa1a1', width: '100%', height: '100%'}}></View>;
 
@@ -92,10 +96,9 @@ class PhotoItem extends React.Component {
             },
             body: JSON.stringify(this.state)
         }
-        fetch('https://greenlite-api.herokuapp.com/approvals/', reqObj)
+        fetch(`${apiURL}approvals/`, reqObj)
         .then(resp => resp.json())
         .then(approval => {
-            console.log(approval)
             this.props.updateApprovals(approval)
         })
     }
@@ -171,7 +174,7 @@ class PhotoItem extends React.Component {
         >
               <DoubleClick onClick={() => this.handleApprove()}  key={this.props.index}>
                 <Image
-                 key={this.props.item.id} style={styles.image} source={{uri: `https://greenlite-api.herokuapp.com/${this.props.item.photo}`}} />
+                 key={this.props.item.id} style={styles.image} source={{uri: `${apiURL}${this.props.item.photo}`}} />
                   <View style={this.responsesBackground()}>
                     <>{this.renderResponses()}</>
                   </View>

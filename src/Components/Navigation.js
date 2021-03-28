@@ -6,6 +6,9 @@ import { selectCollection } from '../Actions/collections';
 import { loadCollections } from '../Actions/collections';
 import * as ImagePicker from 'expo-image-picker';
 
+import API from './API'
+const apiURL = API()
+
 
 class BottomNavigation extends React.Component {
     constructor(props){
@@ -27,7 +30,7 @@ class BottomNavigation extends React.Component {
         body:  JSON.stringify(this.state)
       }
   
-      fetch('https://greenlite-api.herokuapp.com/collections', reqObj)
+      fetch(`${apiURL}collections`, reqObj)
       .then(resp => resp.json())
       .then(data => {
         this.props.selectCollection(data)
@@ -35,7 +38,7 @@ class BottomNavigation extends React.Component {
     }
 
     refreshCollections = () => {
-      fetch(`https://greenlite-api.herokuapp.com/users/${this.props.user.id}`)
+      fetch(`${apiURL}users/${this.props.user.id}`)
       .then(resp => resp.json())
       .then(user => {
         this.props.loadCollections(user.collections)
