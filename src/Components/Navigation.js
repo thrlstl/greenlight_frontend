@@ -1,120 +1,118 @@
-import React, { Component } from "react";
-import { TouchableOpacity, StyleSheet, View, ScrollView, Image, SafeAreaView } from "react-native";
-import Navigation from './Navigation';
-import { connect } from 'react-redux';
+import React, { useState } from "react";
+import { TouchableOpacity, StyleSheet, View, Image } from "react-native";
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCollection } from '../Actions/collections';
 import { loadCollections } from '../Actions/collections';
-import * as ImagePicker from 'expo-image-picker';
 
 import API from './API'
 const apiURL = API()
 
+function BottomNavigation(props) {
 
-class BottomNavigation extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          name: 'collection',
-          location: 'location',
-          user_id: this.props.user.id
-        }
-    }
+    const dispatch = useDispatch()
+    const navigate = screen => props.navigationRef.current?.navigate(screen)
+    const user = useSelector(state => state.user)
+
+    const [collectionData, setCollectionData] = useState({
+      name: 'collection',
+      location: 'location',
+      user_id: user.id
+    })
     
-    
-    createCollection = () => {
+    //move this function to the photo upload component
+    const createCollection = () => {
       const reqObj = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body:  JSON.stringify(this.state)
+        body:  JSON.stringify(collectionData)
       }
-  
       fetch(`${apiURL}collections`, reqObj)
       .then(resp => resp.json())
       .then(data => {
-        this.props.selectCollection(data)
+        dispatch(selectCollection(data))
       })
     }
 
-    refreshCollections = () => {
-      fetch(`${apiURL}users/${this.props.user.id}`)
+    const refreshCollections = () => {
+      fetch(`${apiURL}users/${user.id}`)
       .then(resp => resp.json())
       .then(user => {
-        this.props.loadCollections(user.collections)
+        dispatch(loadCollections(user.collections))
       })
     }
 
-    handlePress = (name) => {
-        switch(name) {
+    const handlePress = (button, screen) => {
+        switch(button) {
             case 'HOME':
-                this.refreshCollections()
-                this.props.navigation.navigate('Collections')
+                refreshCollections()
+                navigate(screen)
                 break
             case 'ADD':
-                this.createCollection()
-                this.props.navigation.navigate('Photo Upload')
+                createCollection()
+                navigate(screen)
                 break
             case 'PROFILE':
-                this.props.navigation.navigate('Profile')
+                navigate(screen)
                 break
         }
     }
-    
-    render(){
-        return (
-                <View style={styles.navigationContainer}>
-                  <View style={styles.buttonsContainer}>
 
-                    {/* HOME BUTTON */}
-                    <TouchableOpacity
-                      onPress={() => this.handlePress('HOME')}>
-                        <Image
-                         source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/home-button.png')}
-                         resizeMode="contain"
-                         style={styles.homeButton}>
-                        </Image>
-                    </TouchableOpacity>
-
-                     {/* ADD BUTTON */}
-                    <TouchableOpacity
-                      onPress={() => this.handlePress('ADD')}>
-                    <Image
-                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/add-button-2.png')}
-                      resizeMode="contain"
-                      style={styles.addButton}
-                    ></Image>
-                    </TouchableOpacity>
-
-                     {/* PROFILE BUTTON */}
-                    <TouchableOpacity
-                     onPress={() => this.handlePress('PROFILE')}>
-                    <Image
-                      source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/profile-button-2.png')}
-                      resizeMode="contain"
-                      style={styles.profileButton}
-                    ></Image>
-                    </TouchableOpacity>
-
-                  </View>
-                </View>
-          );
+    function HomeButton() {
+      return(
+        <TouchableOpacity
+          onPress={() => handlePress('HOME', 'Collections')}>
+          <Image
+            source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/home-button.png')}
+            resizeMode="contain"
+            style={styles.homeButton}>
+          </Image>
+        </TouchableOpacity>
+      )
     }
-}
 
-const mapStateToProps = (state) => {
-  return {
-      user: state.user,
-      collection: state.collection
-  }
-}
+    function AddButton() {
+      return(
+        <TouchableOpacity
+          onPress={() => handlePress('ADD', 'Photo Upload')}>
+          <Image
+            source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/add-button-2.png')}
+            resizeMode="contain"
+            style={styles.addButton}>
+          </Image>
+        </TouchableOpacity>
+      )
+    }
 
-const mapDispatchToProps = {
-  loadCollections,
-  selectCollection
-}
+    function ProfileButton() {
+      return(
+        <TouchableOpacity
+          onPress={() => handlePress('PROFILE', 'Profile')}>
+          <Image
+            source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/profile-button-2.png')}
+            resizeMode="contain"
+            style={styles.profileButton}>
+          </Image>
+        </TouchableOpacity>
+      )
+    }
 
-export default connect(mapStateToProps, mapDispatchToProps) (BottomNavigation)
+    return (
+            <View style={styles.navigationContainer}>
+              <View style={styles.buttonsContainer}>
+                <HomeButton />
+                <AddButton />
+                <ProfileButton />
+              </View>
+            </View>
+      );
+    }
+
+export default BottomNavigation;
+
+// STYLES
+// Designed with BuilderX by Matthew Steele.
 
 const styles = StyleSheet.create({
   container: {

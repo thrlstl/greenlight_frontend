@@ -102,11 +102,6 @@ export default Login;
 // STYLES
 // Designed with BuilderX by Matthew Steele.
 
-// const mapDispatchToProps = {
-//   loginSuccess,
-//   loadCollections
-// }
-
 const styles = StyleSheet.create({
   container: {
     width: 252,

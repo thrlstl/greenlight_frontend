@@ -54,16 +54,10 @@ class Collections extends React.Component {
                 <View style={styles.collectionsContainer}>
                   <ScrollView
                     horizontal={false}
-                    // refreshControl={
-                    //   <RefreshControl
-                    //     refreshing={this.state.refreshing}
-                    //     onRefresh={this._onRefresh}
-                    //   />
-                    // }
                   >
                       {this.renderCollection()}
                   </ScrollView>
-                  <BottomNavigation {...this.props} />
+                  {/* <BottomNavigation {...this.props} /> */}
                 </View>
               </View>
             </View>

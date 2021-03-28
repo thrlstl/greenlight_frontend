@@ -2,16 +2,18 @@ import React, {  useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './src/Components/Home'
+import Auth from './src/Components/Auth'
 import Collections from './src/Components/Collections';
 import ViewCollection from './src//Components/ViewCollection';
 import Profile from './src/Components/Profile'
 import SplashScreen from './src/Components/SplashScreen';
 import PhotoUpload from './src/Components/PhotoUpload';
+import BottomNavigation from './src/Components/Navigation'
 
 function App() {
   
   const Stack = createStackNavigator()
+  const navigationRef = React.createRef();
   const [loggedIn, setLoggedIn] = useState(false)
   const [splashScreen, setSplashScreen] = useState(true)
   const user = useSelector(state => state.user)
@@ -28,50 +30,25 @@ function App() {
     })
   }, [user])
 
-  const renderStack = () => {
-      return (
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-            headerShown: false
-            }}>
-              
-          { loggedIn 
-
-          ?   <Stack.Screen
-              name="Collections"
-              component={Collections}
-              />
-              
-          :  <Stack.Screen
-              name='Home'
-              component={Home}
-              />  }
-
-              <Stack.Screen
-              name='View Collection'
-              component={ViewCollection}
-              />
-
-              <Stack.Screen
-              name='Profile'
-              component={Profile}
-              />
-
-              <Stack.Screen
-              name='Photo Upload'
-              component={PhotoUpload}
-              />
-
-            </Stack.Navigator>
-        </NavigationContainer>
-      )
+  function HomeStack() {
+    return(
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator initialRouteName='Collections' screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='Collections' component={Collections}/>
+          <Stack.Screen name='View Collection' component={ViewCollection}/>
+          <Stack.Screen name='Profile' component={Profile}/>
+          <Stack.Screen name='Photo Upload' component={PhotoUpload}/>
+        </Stack.Navigator>
+          <BottomNavigation navigationRef={navigationRef}/>
+      </NavigationContainer>
+    )
   }
-
     return (
       splashScreen 
-      ? <SplashScreen /> 
-      : renderStack()
+      ? <SplashScreen />
+      : ( !loggedIn
+      ? <Auth />
+      : <HomeStack /> ) 
     );
 }
 

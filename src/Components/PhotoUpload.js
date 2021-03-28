@@ -23,7 +23,6 @@ const apiURL = API()
 
 const directUploadsUrl = `${apiURL}rails/active_storage/direct_uploads`;
 
-
 class PhotoUpload extends React.Component {
     constructor(props){
         super(props)
@@ -39,6 +38,9 @@ class PhotoUpload extends React.Component {
           splashScreen: false
         })
       }
+
+    // create collection in this component
+    // instead of creating the collection in the nav component
 
     createPhotos = (photoData) => {
         const uri = photoData.uri
