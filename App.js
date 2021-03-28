@@ -1,5 +1,5 @@
 import React, {  useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Components/Home'
@@ -9,12 +9,12 @@ import Profile from './src/Components/Profile'
 import SplashScreen from './src/Components/SplashScreen';
 import PhotoUpload from './src/Components/PhotoUpload';
 
-function App(props) {
+function App() {
   
-  const Stack = createStackNavigator();
-  const user = props.user
+  const Stack = createStackNavigator()
   const [loggedIn, setLoggedIn] = useState(false)
   const [splashScreen, setSplashScreen] = useState(true)
+  const user = useSelector(state => state.user)
 
   useEffect(() => {
     setTimeout(() => {
@@ -75,11 +75,6 @@ function App(props) {
     );
 }
 
-const mapStateToProps = (state) => {
-  return {
-      user: state.user
-  }
-}
+export default App;
 
-export default connect(mapStateToProps, null) (App);
 
