@@ -47,7 +47,6 @@ class Profile extends React.Component {
                         <Text
                         style={styles.numCollections}>Logout</Text>
                         </TouchableOpacity>
-                <BottomNavigation {...this.props}/>
             </View>
     );
   }

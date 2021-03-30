@@ -8,8 +8,6 @@ class Approvals extends React.Component {
 
     render(){
         return (
-            // <View style={styles.container}>
-            // <View style={styles.approveContainer}>
             <View style={styles.approvalButtonImageStack}>
             <Image
             source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/heart-button.png')}
@@ -25,8 +23,6 @@ class Approvals extends React.Component {
             <Text style={styles.approvalCountText}>{this.props.approvals}</Text>
             </ImageBackground>
             </View>
-            // </View>
-            // </View>
           );
     }
 }

@@ -3,51 +3,40 @@ import {
   StyleSheet,
   View
 } from "react-native";
-
+import { useSelector } from 'react-redux';
 import GridList from 'react-native-grid-list';
-
 import TopNavigation from './TopNavigation'
-import BottomNavigation from './Navigation';
-import { connect } from 'react-redux';
 import PhotoItem from './PhotoItem'
 
-const rightContent = <View 
-style={{backgroundColor: '#ff7c7c', width: '100%', height: '100%'}}></View>;
+function ViewCollection() {
 
-class ViewCollection extends React.Component {
-    constructor(props){
-        super(props)
-    }
+  const collection = useSelector(state => state.collection)
 
-    renderItem = ({ item, index }) => (
-      <PhotoItem item={item} index={index} />
-      );
+  const renderItem = ({ item, index }) => (
+      <PhotoItem 
+      // {...item} 
+      item={item}
+      key={index}/>
+  );
 
-  render(){
-    return (
-            <View style={styles.container}>
-                    <TopNavigation />
-                    <GridList
-                    showSeparator
-                    data={this.props.collection.photos}
-                    numColumns={1}
-                    renderItem={this.renderItem}
-                    itemStyle={styles.photoContainer}
-                    />
-                <BottomNavigation {...this.props} />
-            </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <TopNavigation />
+        <GridList
+        showSeparator
+        data={collection.photos}
+        numColumns={1}
+        renderItem={renderItem}
+        itemStyle={styles.photoContainer}
+        />
+    </View>
+  );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-        collection: state.collection
-    }
-}
+export default ViewCollection;
 
-export default connect(mapStateToProps, null)(ViewCollection)
+// STYLES
+// Designed with BuilderX by Matthew Steele.
 
 const styles = StyleSheet.create({
     container: {

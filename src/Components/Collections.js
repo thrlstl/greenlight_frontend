@@ -57,7 +57,6 @@ class Collections extends React.Component {
                   >
                       {this.renderCollection()}
                   </ScrollView>
-                  {/* <BottomNavigation {...this.props} /> */}
                 </View>
               </View>
             </View>
