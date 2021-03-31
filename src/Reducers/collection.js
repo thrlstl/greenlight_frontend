@@ -6,7 +6,7 @@ const collectionReducer = (state={}, action) => {
         return action.collection
       case 'UPDATE_APPROVALS':
         let updatedApprovals = {...state}
-        const approvedPhoto = updatedApprovals.photos.find(photo => photo.id === action.approval.photo.id)
+        const approvedPhoto = updatedApprovals.photos.find(photo => photo.id === action.approval.photo_id)
         const newApproval = approvedPhoto.approvals.find(approval => approval.id === action.approval.id)
         if (!newApproval) {
           approvedPhoto.approvals.push(action.approval)

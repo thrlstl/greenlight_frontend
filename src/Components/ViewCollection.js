@@ -12,10 +12,12 @@ function ViewCollection() {
 
   const collection = useSelector(state => state.collection)
 
-  const renderItem = ({ item, index }) => (
+  const renderItem = ({ item, index }) => ( 
       <PhotoItem 
-      // {...item} 
+      // {...item}
+
       item={item}
+      // approvals={item.approvals}
       key={index}/>
   );
 
