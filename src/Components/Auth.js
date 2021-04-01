@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Keyboard, TouchableWithoutFeedback, SafeAreaView, TouchableOpacity, StyleSheet, View, Image, Text } from "react-native";
 import Login from './Login';
 import Signup from './Signup';
@@ -6,17 +6,23 @@ import Signup from './Signup';
 function Auth() {
 
   const [toggle, setToggle] = useState(true)
+  const buttonPressedColor = 'rgba(255, 255, 255, 0.30)'
+  const buttonNotPressedColor = 'rgba(255, 255, 255, 0.2)'
+
+  const backgroundColor = (name) => {
+    return name === toggle
+    ? buttonPressedColor
+    : buttonNotPressedColor
+  }
 
   const renderLoginOrSignup = () => {
-    return toggle 
+    return toggle === 'login' 
     ? <Login />
     : <Signup />
   }
 
   const handlePress = (name) => {
-    setToggle(() => {
-      return name === 'login' ? true : false
-    })
+    setToggle(name)
   }
 
   function Toggle() {
@@ -33,31 +39,6 @@ function Auth() {
       </View>
     )
   }
-
-    return (
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <SafeAreaView style={styles.container}>
-          <View
-            gradientImage="Gradient_eRV1whX.png"
-            style={styles.loginOrSignupView}></View>
-          <Image
-            source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/login.gif')}
-            resizeMode="contain"
-            style={styles.logo}>
-          </Image>
-          <Toggle />
-          <View style={styles.loginOrSignupContainer}>
-            {renderLoginOrSignup()}
-          </View>
-        </SafeAreaView>
-      </TouchableWithoutFeedback>
-    );
-  }
-
-export default Auth;
-
-// STYLES
-// Designed with BuilderX by Matthew Steele.
 
 const greenliteColor = 'rgba(169,255,218,1)'
 
@@ -86,7 +67,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: 188,
     height: 50,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: backgroundColor('login'),
     borderWidth: 0,
     borderColor: 'white',
     borderRightWidth: 0,
@@ -105,7 +86,7 @@ const styles = StyleSheet.create({
   signupButton: {
     width: 188,
     height: 50,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: backgroundColor('signup'),
     borderWidth: 2,
     borderColor: 'white',
     borderRightWidth: 0,
@@ -131,3 +112,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#c6f9d7'
   }
 });
+
+    return (
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <SafeAreaView style={styles.container}>
+          <View
+            gradientImage="Gradient_eRV1whX.png"
+            style={styles.loginOrSignupView}></View>
+          <Image
+            source={require('/Users/matthewsteele/Development/code/Mod5/final-project/front-end/GreenliteFrontend/src/assets/images/login.gif')}
+            resizeMode="contain"
+            style={styles.logo}>
+          </Image>
+          <Toggle />
+          <View style={styles.loginOrSignupContainer}>
+            {renderLoginOrSignup()}
+          </View>
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
+    );
+  }
+
+// STYLES
+// Designed with BuilderX by Matthew Steele.
+
+export default Auth;

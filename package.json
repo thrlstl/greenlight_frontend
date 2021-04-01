@@ -27,6 +27,7 @@
     "react-native-gesture-handler": "~1.7.0",
     "react-native-grid-list": "^1.1.0",
     "react-native-keyboard-accessory": "^0.1.14",
+    "react-native-motion": "^1.0.5",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
