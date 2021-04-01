@@ -15,6 +15,8 @@ const collectionReducer = (state={}, action) => {
           newApproval.approval = action.approval.approval
         }
         return updatedApprovals
+      case 'CLEAR_COLLECTION':
+        return action.collection
       default:
         return state
     }

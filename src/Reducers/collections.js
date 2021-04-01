@@ -12,6 +12,8 @@ const collectionsReducer = (state={}, action) => {
             return 0
           })
         return collections
+      case 'CLEAR_COLLECTIONS':
+        return action.collections
       default:
         return state
     }

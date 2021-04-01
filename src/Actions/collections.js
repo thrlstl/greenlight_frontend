@@ -18,3 +18,18 @@ export const selectCollection = (collection) => {
       approval: approval
     }
   }
+
+  export const clearCollections = () => {
+    return {
+      type: 'CLEAR_COLLECTIONS',
+      collections: {}
+    }
+  }
+
+  export const clearCollection = () => {
+    return {
+      type: 'CLEAR_COLLECTION',
+      collection: {}
+    }
+  }
+

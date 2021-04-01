@@ -13,15 +13,23 @@ import {
 import BottomNavigation from './Navigation';
 import { connect } from 'react-redux';
 import { logoutSuccess } from '../Actions/auth';
+import { clearCollections } from '../Actions/collections';
+import { clearCollection } from '../Actions/collections';
+
+
 
 class Profile extends React.Component {
+    navigate = screen => props.navigationRef.current?.navigate(screen)
+
     constructor(props){
         super(props)
     }
 
     handleLogout = () => {
-        this.props.navigation.navigate('Home')
-        // this.props.logoutSuccess()
+        // this.props.navigation.navigate('Auth')
+        this.props.logoutSuccess()
+        this.props.clearCollections()
+        this.props.clearCollection()
     }
 
   render(){
@@ -59,7 +67,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  logoutSuccess
+  logoutSuccess,
+  clearCollections,
+  clearCollection
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
