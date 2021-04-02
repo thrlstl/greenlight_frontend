@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { Animated, StyleSheet, View, TouchableOpacity, Text, Animate } from "react-native";
 import { connect } from 'react-redux';
 import SwitchSelector from "react-native-switch-selector";
+import { filterByApprovedPhotos } from '../Actions/collections'
 
 class TopNavigation extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
     }
 
     handleToggle = (value) => {
@@ -16,7 +17,8 @@ class TopNavigation extends React.Component {
         this.handleAll()
       }
       else if (value === 'approved') {
-        this.handleApproved()
+        this.props.filterByApprovedPhotos(this.props.collection)
+        // this.handleApproved()
       }
     }
 
@@ -61,12 +63,6 @@ class TopNavigation extends React.Component {
                   ]}
                   />
                 </View>
-                {/* <TouchableOpacity style={styles.notApprovedButton}>
-                  <Text style={styles.notApprovedText}>Not Approved</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.approvedButton}>
-                  <Text style={styles.approvedText}>Approved</Text>
-                </TouchableOpacity> */}
               </View>
             </View>
           );
@@ -79,11 +75,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = {
-//   loginSuccess
-// }
+const mapDispatchToProps = {
+  filterByApprovedPhotos
+}
 
-export default connect(mapStateToProps, null) (TopNavigation)
+export default connect(mapStateToProps, mapDispatchToProps) (TopNavigation);
 
 const styles = StyleSheet.create({
     container: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   View
@@ -11,26 +11,30 @@ import PhotoItem from './PhotoItem'
 function ViewCollection() {
 
   const collection = useSelector(state => state.collection)
-
-  const renderItem = ({ item, index }) => ( 
+  const photos = collection.photos
+ 
+  const renderItem = ({ item, index }) => (
       <PhotoItem 
-      // {...item}
-
       item={item}
-      // approvals={item.approvals}
       key={index}/>
   );
 
-  return (
-    <View style={styles.container}>
-      <TopNavigation />
-        <GridList
+  function PhotoGrid() {
+    return(
+      <GridList
         showSeparator
-        data={collection.photos}
+        data={photos}
         numColumns={1}
         renderItem={renderItem}
         itemStyle={styles.photoContainer}
         />
+    )
+  }
+
+  return (
+    <View style={styles.container}>
+      <TopNavigation />
+        <PhotoGrid />
     </View>
   );
 }

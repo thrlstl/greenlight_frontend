@@ -33,3 +33,10 @@ export const selectCollection = (collection) => {
     }
   }
 
+  export const filterByApprovedPhotos = (collection) => {
+    return {
+      type: 'FILTER_BY_APPROVED_PHOTOS',
+      collection: collection
+    }
+  }
+

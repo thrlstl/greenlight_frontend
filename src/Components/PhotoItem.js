@@ -120,10 +120,10 @@ function PhotoItem(props) {
           body: JSON.stringify(approvalObj)
       }
       fetch(`${apiURL}approvals/`, reqObj)
-      .then(resp => resp.json())
-      .then(approval => {
-        dispatch(updateApprovals(approval))
-      })
+      // .then(resp => resp.json())
+      // .then(approval => {
+      //   dispatch(updateApprovals(approval))
+      // })
   }
 
   const renderApprovals = () => {

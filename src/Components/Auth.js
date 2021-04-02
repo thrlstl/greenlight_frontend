@@ -5,7 +5,7 @@ import Signup from './Signup';
 
 function Auth() {
 
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState('login')
   const buttonPressedColor = 'rgba(255, 255, 255, 0.30)'
   const buttonNotPressedColor = 'rgba(255, 255, 255, 0.2)'
 
@@ -16,7 +16,7 @@ function Auth() {
   }
 
   const renderLoginOrSignup = () => {
-    return toggle === 'login' 
+    return toggle === 'login'
     ? <Login />
     : <Signup />
   }
