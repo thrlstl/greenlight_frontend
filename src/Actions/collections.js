@@ -40,3 +40,9 @@ export const selectCollection = (collection) => {
     }
   }
 
+  export const filterByDisapprovedPhotos = (collection) => {
+    return {
+      type: 'FILTER_BY_DISAPPROVED_PHOTOS',
+      collection: collection
+    }
+  }

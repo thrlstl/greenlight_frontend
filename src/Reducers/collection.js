@@ -18,10 +18,10 @@ const collectionReducer = (state={}, action) => {
         }
         return updatedApprovals
       case 'FILTER_BY_APPROVED_PHOTOS':
-        let updatedCollection = {...state}
-        const allPhotos = updatedCollection.photos
+        let filterByApproved = {...state}
+        const allPhotos1 = filterByApproved.photos
         const approvedPhotoIds = []
-        allPhotos.map(photo => {
+        allPhotos1.map(photo => {
           return photo.approvals.length
           ? photo.approvals.forEach(approval => {
             return approval.approval
@@ -30,10 +30,27 @@ const collectionReducer = (state={}, action) => {
           })
           : null
         })
-        const uniquePhotoIds = approvedPhotoIds.filter(uniq)
-        const approvedPhotos = allPhotos.filter((photo) => uniquePhotoIds.includes(photo.id))
-        updatedCollection.photos = approvedPhotos
-        return updatedCollection
+        const uniquePhotoIds1 = approvedPhotoIds.filter(uniq)
+        const approvedPhotos = allPhotos1.filter((photo) => uniquePhotoIds1.includes(photo.id))
+        filterByApproved.photos = approvedPhotos
+        return filterByApproved
+      case 'FILTER_BY_DISAPPROVED_PHOTOS':
+        let filterByDisapproved = {...state}
+        const allPhotos2 = filterByDisapproved.photos
+        const disapprovedPhotoIds = []
+        allPhotos2.map(photo => {
+          return photo.approvals.length
+          ? photo.approvals.forEach(approval => {
+            return !approval.approval
+            ? disapprovedPhotoIds.push(approval.photo_id)
+            : null
+          })
+          : null
+        })
+        const uniquePhotoIds2 = disapprovedPhotoIds.filter(uniq)
+        const disapprovedPhotos = allPhotos2.filter((photo) => uniquePhotoIds2.includes(photo.id))
+        filterByDisapproved.photos = disapprovedPhotos
+        return filterByDisapproved
       case 'CLEAR_COLLECTION':
         return action.collection
       default:

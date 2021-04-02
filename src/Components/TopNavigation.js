@@ -2,38 +2,28 @@ import React, { Component } from "react";
 import { Animated, StyleSheet, View, TouchableOpacity, Text, Animate } from "react-native";
 import { connect } from 'react-redux';
 import SwitchSelector from "react-native-switch-selector";
-import { filterByApprovedPhotos } from '../Actions/collections'
+import { filterByApprovedPhotos, filterByDisapprovedPhotos, selectCollection } from '../Actions/collections'
+
+import API from './API'
+const apiURL = API()
 
 class TopNavigation extends React.Component {
     constructor(props){
         super(props)
     }
 
-    handleToggle = (value) => {
-      if (value === 'disapproved') {
-        this.handleDisapproved()
-      }
-      else if (value === 'all') {
-        this.handleAll()
-      }
-      else if (value === 'approved') {
-        this.props.filterByApprovedPhotos(this.props.collection)
-        // this.handleApproved()
-      }
+    handleFilter = (value) => {
+      fetch(`${apiURL}collections/${this.props.collection.id}`)
+      .then(resp => resp.json())
+      .then(collection => {
+        value === 'approved'
+        ? this.props.filterByApprovedPhotos(collection)
+        : ( value === 'disapproved'
+        ? this.props.filterByDisapprovedPhotos(collection)
+        : this.props.selectCollection(collection) )
+      })
     }
-
-    handleDisapproved = () => {
-      console.log('disapproved')
-    }
-
-    handleAll = () => {
-      console.log('all')
-    }
-
-    handleApproved = () => {
-      console.log('approved')
-    }
-
+    
     render(){
 
       const images = {
@@ -46,7 +36,7 @@ class TopNavigation extends React.Component {
                 <View style={styles.toggleContainer}>
                   <SwitchSelector
                   initial={1}
-                  onPress={(value) => this.handleToggle(value)}
+                  onPress={(value) => this.handleFilter(value)}
                   textColor={'black'} //'#7a44cf'
                   selectedColor={'white'}
                   borderRadius={20}
@@ -76,7 +66,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  filterByApprovedPhotos
+  filterByApprovedPhotos,
+  filterByDisapprovedPhotos,
+  selectCollection
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (TopNavigation);

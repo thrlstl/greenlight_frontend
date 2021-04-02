@@ -96,7 +96,7 @@ Flash forward to my final three weeks in Flatiron School's Software Engineering 
 - 𝗥𝗲𝗮𝗰𝘁 / 𝗥𝗲𝗱𝘂𝘅 𝗛𝗼𝗼𝗸𝘀 — Currently updating and converting each component using React / Redux Hooks for improved readability, re-usability, and overall code structure.
 - 𝗔𝗺𝗮𝘇𝗼𝗻 / 𝗔𝗪𝗦 𝗦𝟯 — I'm in the process of implementing a dedicated file storage service like S3. Currently, I host the backend API on Heroku, which is ephemeral, not supportive of persistent file storage. Meaning, photos in Greenlite's database are only visible for a short period or while developing in my local environment.
 - 𝗖𝗼𝗹𝗹𝗮𝗯𝗼𝗿𝗮𝘁𝗼𝗿𝘀 — Users should be able to add collaborators to a collection when it's created or later.
-- 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 — Users should be able to filter a collection by photos liked or disliked by collaborators.
+- ✓ 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 — Users should be able to filter a collection by photos liked or disliked by collaborators.
 - 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗩𝗶𝗲𝘄 𝗦𝘁𝘆𝗹𝗲 — Users should be able to change the appearance of a collections view. (list or grid)
 - 𝗣𝗵𝗼𝘁𝗼 𝗩𝗶𝗲𝘄 — Users should be able to expand a photo when single-clicked.
 - 𝗦𝗮𝘃𝗲 𝘁𝗼 𝗖𝗮𝗺𝗲𝗿𝗮 𝗥𝗼𝗹𝗹 — Users should be able to save to camera roll when they press and hold a photo.
