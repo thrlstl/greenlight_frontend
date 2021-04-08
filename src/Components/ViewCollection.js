@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet,
-  View
-} from "react-native";
+import React from 'react';
+import { StyleSheet, View } from "react-native";
 import { useSelector } from 'react-redux';
 import GridList from 'react-native-grid-list';
-import TopNavigation from './TopNavigation'
+import SortingSwitch from './SortingSwitch'
 import PhotoItem from './PhotoItem'
 
 function ViewCollection() {
@@ -33,7 +30,7 @@ function ViewCollection() {
 
   return (
     <View style={styles.container}>
-      <TopNavigation />
+      <SortingSwitch />
         <PhotoGrid />
     </View>
   );
